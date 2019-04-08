@@ -23,8 +23,10 @@
 
 from django.db import models
 
+from base.models import AbstractBaseModel
 
-class Vulnerability(models.Model):
+
+class Vulnerability(AbstractBaseModel):
     """
     A software vulnerability with minimal information.
     Identifiers are stored as VulnerabilityReference.
@@ -36,7 +38,7 @@ class Vulnerability(models.Model):
         return self.summary
 
 
-class VulnerabilityReference(models.Model):
+class VulnerabilityReference(AbstractBaseModel):
     """
     One or more remote web site references about a software
     vulnerability data on such as a CVE ID and its web page
@@ -58,7 +60,7 @@ class VulnerabilityReference(models.Model):
         return self.source
 
 
-class Package(models.Model):
+class Package(AbstractBaseModel):
     """
     A software package with minimal identifying information.
     Other identifiers are stored as PackageReference.
@@ -72,7 +74,7 @@ class Package(models.Model):
         return self.name
 
 
-class ImpactedPackage(models.Model):
+class ImpactedPackage(AbstractBaseModel):
     """
     Relates a vulnerability to package(s) impacted by it.
     """
@@ -83,7 +85,7 @@ class ImpactedPackage(models.Model):
         unique_together = ('vulnerability', 'package')
 
 
-class ResolvedPackage(models.Model):
+class ResolvedPackage(AbstractBaseModel):
     """
     Relates a vulnerability to package(s) that contain
     a fix or resolution of this vulnerability.
@@ -92,7 +94,7 @@ class ResolvedPackage(models.Model):
     package = models.ForeignKey(Package, on_delete=models.CASCADE)
 
 
-class PackageReference(models.Model):
+class PackageReference(AbstractBaseModel):
     """
     One or more identifiers and references for a software package
     in a package repository, such as a Debian, Maven or NPM repository.

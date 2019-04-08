@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'vulnerabilities',
     'rest_framework',
     'django_filters',
+    'base',
+    'vulnerabilities'
 ]
 
 MIDDLEWARE = [
@@ -72,7 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.static',
                 'django.template.context_processors.request',
-		'django.contrib.messages.context_processors.messages'
+                'django.contrib.messages.context_processors.messages'
             ],
         },
     },
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'vulnerablecode.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-	'NAME': 'vulnerablecode',
+        'NAME': 'vulnerablecode',
         'USER': 'vulnerablecode',
         'PASSWORD': 'vulnerablecode',
         'HOST': 'localhost',
