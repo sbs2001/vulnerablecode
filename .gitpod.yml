@@ -2,3 +2,5 @@ tasks:
   - init: python3 -m venv venv
   - command: source venv/bin/activate
   - init: pip install -r ./requirements.txt
+image:
+  file: .gitpod.dockerfile
