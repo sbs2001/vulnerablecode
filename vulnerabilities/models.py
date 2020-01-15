@@ -36,7 +36,7 @@ class Vulnerability(models.Model):
     cvss = models.FloatField(max_length=100, help_text='CVSS Score', null=True)
 
     def __str__(self):
-        return self.summary
+        return self.cve_id
 
     class Meta:
         verbose_name_plural = 'Vulnerabilities'
