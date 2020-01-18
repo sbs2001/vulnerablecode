@@ -1,11 +1,11 @@
 import os
 import urllib.request
-import saneyaml
-
+from itertools import chain
 from shutil import rmtree
 from urllib.error import HTTPError
 from zipfile import ZipFile
-from itertools import chain
+
+import saneyaml
 from dephell_specifier import RangeSpecifier
 
 RUBYCVE_LINK = 'https://github.com/rubysec/ruby-advisory-db/archive/master.zip'
@@ -13,27 +13,27 @@ DOWNLOAD_PATH = os.path.dirname(os.path.realpath(__file__))
 
 
 def get_rubycve_db():
-    pathToZip, _ = urllib.request.urlretrieve(
+    path_to_zip, _ = urllib.request.urlretrieve(
         RUBYCVE_LINK, os.path.join(
             DOWNLOAD_PATH, 'ruby.zip'))
-    ZipFile(pathToZip).extractall(DOWNLOAD_PATH)
-    os.remove(pathToZip)
+    ZipFile(path_to_zip).extractall(DOWNLOAD_PATH)
+    os.remove(path_to_zip)
 
 
 def path_of_yaml_of_all_packages():
-    gemPath = os.path.join(DOWNLOAD_PATH, 'ruby-advisory-db-master', 'gems')
-    rubiesPath = os.path.join(
+    gem_path = os.path.join(DOWNLOAD_PATH, 'ruby-advisory-db-master', 'gems')
+    rubies_path = os.path.join(
         DOWNLOAD_PATH,
         'ruby-advisory-db-master',
         'rubies')
     for (
-            packagePath,
+            package_path,
             _,
-            yamlNames) in chain(
-            os.walk(gemPath),
-            os.walk(rubiesPath)):
-        for yamlName in yamlNames:
-            yield os.path.join(packagePath, yamlName)
+            yaml_names) in chain(
+            os.walk(gem_path),
+            os.walk(rubies_path)):
+        for yaml_name in yaml_names:
+            yield os.path.join(package_path, yaml_name)
 
 
 def get_all_versions_of_package(package_name):
@@ -64,8 +64,8 @@ def import_vulnerabilities():
     ids = set()
     vulnerability_to_package_map = []
     for vulnerability_path in path_of_yaml_of_all_packages():
-        with open(vulnerability_path) as yamlFile:
-            vulnerability = saneyaml.load(yamlFile)
+        with open(vulnerability_path) as yaml_file:
+            vulnerability = saneyaml.load(yaml_file)
             package_name = vulnerability.get(
                 'engine', vulnerability.get('gem'))
             summary = vulnerability.get('description', '')
@@ -78,19 +78,19 @@ def import_vulnerabilities():
                 continue
             severity = vulnerability.get(
                 'cvss_v3', vulnerability.get('cvss_v2'))
-            advisoryUrl = vulnerability.get('url')
+            advisory_url = vulnerability.get('url')
             specs = list(
                 get_patched_range(
                     vulnerability.get('patched_versions')))
-            allVersions = set(list(get_all_versions_of_package(package_name)))
+            all_versions = set(list(get_all_versions_of_package(package_name)))
             unaffected_versions = set()
             if specs:
-                for version in allVersions:
+                for version in all_versions:
                     for spec in specs:
-                        if(version in spec):
+                        if version in spec:
                             unaffected_versions.add(version)
                             break
-            affected_versions = allVersions - unaffected_versions
+            affected_versions = all_versions - unaffected_versions
             vulnerability_to_package_map.append({
                 'package_name': package_name,
                 'summary': summary,
@@ -98,7 +98,7 @@ def import_vulnerabilities():
                 'fixed_versions': unaffected_versions,
                 'affected_versions': affected_versions,
                 'severity': severity,
-                'advisory': advisoryUrl
+                'advisory': advisory_url
             })
     rmtree(os.path.join(DOWNLOAD_PATH, 'ruby-advisory-db-master'))
     return vulnerability_to_package_map

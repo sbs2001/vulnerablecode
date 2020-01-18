@@ -195,7 +195,7 @@ def npm_dump(extract_data):
 def ruby_dump(extract_data):
     for package_data in extract_data:
 
-        if(package_data['severity']):
+        if package_data['severity']:
             vulnerability, _ = Vulnerability.objects.get_or_create(
                 cve_id=package_data['cve_id'],
                 summary=package_data['summary'],
