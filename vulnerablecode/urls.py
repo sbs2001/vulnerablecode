@@ -27,6 +27,9 @@ from django.urls import include, path, re_path
 from rest_framework.routers import DefaultRouter
 
 from vulnerabilities.api import PackageViewSet
+from graphene_django.views import GraphQLView
+
+from vulnerablecode.graphql_api import schema
 
 
 api_router = DefaultRouter()
@@ -35,6 +38,8 @@ api_router.register(r'packages', PackageViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema)),
     re_path(r'^vulnerabilities/', include('vulnerabilities.urls')),
     re_path(r'^api/', include(api_router.urls))
+
 ]

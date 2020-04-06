@@ -47,7 +47,13 @@ INSTALLED_APPS = [
     'vulnerabilities',
     'rest_framework',
     'django_filters',
+    'graphene_django',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'vulnerablecode.graphql_api.schema'
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
