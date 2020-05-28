@@ -32,7 +32,7 @@ def add_safetydb_importer(apps, _):
         last_run=None,
         data_source='SafetyDbDataSource',
         data_source_cfg={
-            'url': 'https://github.com/pyupio/safety-db.git',
+            'url': "https://raw.githubusercontent.com/pyupio/safety-db/master/data/insecure_full.json" ,
         },
     )
 

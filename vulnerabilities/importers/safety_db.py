@@ -23,6 +23,10 @@
 #
 # Data Imported from https://github.com/pyupio/safety-db
 #
+
+from aiohttp import ClientSession
+from aiohttp.client_exceptions import ClientResponseError
+import asyncio
 import dataclasses
 import json
 from typing import Any
@@ -32,6 +36,7 @@ from typing import Set
 from typing import Tuple
 from urllib.error import HTTPError
 from urllib.request import urlopen
+
 
 from dephell_specifier import RangeSpecifier
 from packageurl import PackageURL
@@ -89,9 +94,10 @@ class SafetyDbDataSource(DataSource):
 
     def updated_advisories(self) -> Set[Advisory]:
         advisories = []
-
+        all_packages = {i for i in self._api_response}
+        asyncio.run(self._versions.load_api(all_packages))
         for package_name in self._api_response:
-            all_package_versions = self.versions.get(package_name)
+            all_package_versions = self._versions.get(package_name)
             if len(all_package_versions) == 0:
                 # PyPi does not have data about this package, we skip these
                 continue
@@ -156,21 +162,19 @@ class VersionAPI:
         self.cache = cache or {}
 
     def get(self, package_name: str) -> Set[str]:
-        package_name = package_name.strip()
-
-        if package_name not in self.cache:
-            releases = set()
-            try:
-                with urlopen(f'https://pypi.org/pypi/{package_name}/json') as response:
-                    json_file = json.load(response)
-                    releases = set(json_file['releases'])
-            except HTTPError as e:
-                if e.code == 404:
-                    # PyPi does not have data about this package
-                    pass
-                else:
-                    raise
-
-            self.cache[package_name] = releases
-
         return self.cache[package_name]
+
+    async def load_api(self, pkg_set):
+        async with ClientSession() as session:
+            await asyncio.gather(*[self.set_api(pkg, session) for pkg in pkg_set])
+
+    async def set_api(self, pkg, session):
+        url = 'https://pypi.org/pypi/{}/json'.format(pkg)
+        try:
+            response = await session.request(method='GET', url=url)
+            response.raise_for_status()
+            resp_json = await response.json()
+            releases = set(resp_json['releases'])
+            self.cache[pkg] = releases
+        except ClientResponseError:
+            self.cache[pkg] = {}
