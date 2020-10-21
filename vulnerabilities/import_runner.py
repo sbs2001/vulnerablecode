@@ -290,7 +290,7 @@ def find_closest_vulnerability(advisory):
             else:
                 candidates[match.vulnerabilitiy] = 1
 
-    # Check for vulnerabilities which affect same packages. Increase score by 1 for each matched package.  # nopep8
+    # Check for vulnerabilities which affect same packages. Increase score by 0.5 for each matched package.  # nopep8
     for package in chain(advisory.impacted_package_urls, advisory.resolved_package_urls):
         is_vulnerable = package in advisory.impacted_package_urls
         qs = models.PackageRelatedVulnerability.objects.filter(
