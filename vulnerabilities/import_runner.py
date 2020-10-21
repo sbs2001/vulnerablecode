@@ -184,8 +184,7 @@ def process_advisories(data_source: DataSource) -> None:
             except Exception:
                 # TODO: store error but continue
                 logger.error(
-                    f"Failed to process advisory: {advisory!r}:\n"
-                    + traceback.format_exc()
+                    f"Failed to process advisory: {advisory!r}:\n" + traceback.format_exc()
                 )
 
     models.VulnerabilityReference.objects.bulk_create(
@@ -250,26 +249,70 @@ def _get_or_create_vulnerability(
     advisory: Advisory,
 ) -> Tuple[models.Vulnerability, bool]:
 
-    if advisory.cve_id:
-        query_kwargs = {"cve_id": advisory.cve_id}
-    elif advisory.summary:
-        query_kwargs = {"summary": advisory.summary}
+    if not advisory.cve_id:
+        vulnerability = find_closest_vulnerability(advisory)
+        if not vulnerability:
+            return models.Vulnerability.objects.create(summary=advisory.summary), True
+
+        return vulnerability, False
+
     else:
-        return models.Vulnerability.objects.create(), True
+        try:
+            vuln, created = models.Vulnerability.objects.get_or_create(cve_id=advisory.cve_id)
+            # Eventually we only want to keep summary from NVD and ignore other descriptions.
+            if advisory.summary and vuln.summary != advisory.summary:
+                vuln.summary = advisory.summary
+                vuln.save()
+            return vuln, created
 
-    try:
-        vuln, created = models.Vulnerability.objects.get_or_create(**query_kwargs)
-        # Eventually we only want to keep summary from NVD and ignore other descriptions.
-        if advisory.summary and vuln.summary != advisory.summary:
-            vuln.summary = advisory.summary
-            vuln.save()
-        return vuln, created
+        except Exception:
+            logger.error(
+                f"Failed to _get_or_create_vulnerability: {query_kwargs!r}:\n"
+                + traceback.format_exc()
+            )
+            raise
 
-    except Exception:
-        logger.error(
-            f"Failed to _get_or_create_vulnerability: {query_kwargs!r}:\n"
-            + traceback.format_exc())
-        raise
+
+def find_closest_vulnerability(advisory):
+
+    # TODO optimise the queries and scores
+
+    # Check for vulnerabilities with same references. Increase score by 1 for each matched reference.  # nopep8
+    candidates = {}
+    for ref in advisory.vuln_references:
+        qs = models.VulnerabilityReference.objects.filter(
+            url=ref.url, reference_id=ref.reference_id
+        ).select_related()
+        for match in qs:
+            if candidates.get(match.vulnerabilitiy):
+                candidates[match.vulnerabilitiy] += 1
+
+            else:
+                candidates[match.vulnerabilitiy] = 1
+
+    # Check for vulnerabilities which affect same packages. Increase score by 1 for each matched package.  # nopep8
+    for package in chain(advisory.impacted_package_urls, advisory.resolved_package_urls):
+        is_vulnerable = package in advisory.impacted_package_urls
+        qs = models.PackageRelatedVulnerability.objects.filter(
+            package__type=package.type,
+            package__namespace=package.namespace,
+            package__name=package.name,
+            package__version=package.version,
+            package__subpath=package.subpath,
+            package__qualifiers=package.qualifiers,
+            is_vulnerable=is_vulnerable,
+        )
+
+        for match in qs:
+            if candidates.get(match.vulnerabilitiy):
+                candidates[match.vulnerabilitiy] += 0.5
+
+            else:
+                candidates[match.vulnerabilitiy] = 0.5
+
+    # returns the vulnerability with highest score
+    if candidates:
+        return max(candidates.items(), key=lambda x: x[1])[0]
 
 
 def _get_or_create_package(p: PackageURL) -> Tuple[models.Package, bool]:
