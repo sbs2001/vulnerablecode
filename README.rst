@@ -97,7 +97,7 @@ Without Docker Compose
 
 **System requirements**
 
--  Python 3.8+
+-  Python 3.8
 -  PostgreSQL 9+
 -  Compiler toolchain and development files for Python and PostgreSQL
 
