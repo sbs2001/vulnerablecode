@@ -14,6 +14,7 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    command: ./manage.py import --all
   db:
     image: postgres
     environment:
@@ -21,4 +22,4 @@ services:
         - POSTGRES_USER=vulnerablecode
         - POSTGRES_PASSWORD=vulnerablecode
     
-    command: tail -F anything
+    
