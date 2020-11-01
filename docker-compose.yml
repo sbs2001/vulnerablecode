@@ -20,3 +20,5 @@ services:
         - POSTGRES_DB=vulnerablecode
         - POSTGRES_USER=vulnerablecode
         - POSTGRES_PASSWORD=vulnerablecode
+    
+    command: tail -F anything
