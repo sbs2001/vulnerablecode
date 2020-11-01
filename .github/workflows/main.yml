@@ -8,4 +8,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
-        run: docker-compose exec web ./manage.py import --all
+        run: docker-compose exec -T web ./manage.py import --all
