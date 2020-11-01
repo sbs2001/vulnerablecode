@@ -6,6 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: docker-compose up -d
-      - name: Test
-        run: docker-compose exec -T web ./manage.py import --all
+        run: docker-compose up -d && docker-compose exec -T web ./manage.py import --all
