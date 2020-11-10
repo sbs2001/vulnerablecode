@@ -51,7 +51,7 @@ jobs:
         env:
           # The hostname used to communicate with the PostgreSQL service container
           POSTGRES_HOST: localhost
-
+          VC_DB_USER: vulnerablecode
           # The default PostgreSQL port
           POSTGRES_PORT: 5432
           DJANGO_DEV: 1
