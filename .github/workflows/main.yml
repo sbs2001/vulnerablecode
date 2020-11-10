@@ -1,3 +1,5 @@
+name: Whatever
+on: push
 jobs:
   # Label of the runner job
   runner-job:
