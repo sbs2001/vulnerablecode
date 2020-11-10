@@ -40,7 +40,7 @@ jobs:
       # Performs a clean installation of all dependencies in the `package.json` file
       # For more information, see https://docs.npmjs.com/cli/ci.html
       - name: Install dependencies
-        run: sudo apt install  python3-dev postgresql libpq-dev build-essential && python -m pip install --upgrade pip  && pip install -r requirements.txt
+        run: sudo apt install  python3-dev postgresql libpq-dev build-essential libxml2-dev libxslt1-dev && python -m pip install --upgrade pip  && pip install -r requirements.txt
     
       - name: Connect to PostgreSQL
         # Runs a script that creates a PostgreSQL client, populates
