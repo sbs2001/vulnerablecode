@@ -107,7 +107,6 @@ class Command(BaseCommand):
                 self.stdout.write(
                     self.style.SUCCESS(f'Successfully imported data from {importer.name}'))
             except:
-                raise
                 self.stdout.write(
                     self.style.ERROR(f'Importing data from {importer.name} failed'))
                 
