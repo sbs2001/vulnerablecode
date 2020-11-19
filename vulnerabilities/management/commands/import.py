@@ -110,3 +110,4 @@ class Command(BaseCommand):
                 print(e)
                 self.stdout.write(
                     self.style.ERROR(f'Importing data from {importer.name} failed'))
+                continue

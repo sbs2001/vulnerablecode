@@ -45,7 +45,7 @@ jobs:
       - name: Connect to PostgreSQL
         # Runs a script that creates a PostgreSQL client, populates
         # the client with data, and retrieves data
-        run: python3 manage.py migrate && python3 manage.py import nginx 
+        run: python3 manage.py migrate && python3 manage.py import retiredotnet suse_backports debian_oval redhat nvd gentoo ubuntu_usn msr2019 kaybee nginx postgresql openssl apache_httpd rust alpine archlinux debian npm ruby
         # a new PostgreSQL client.
         env:
           # The hostname used to communicate with the PostgreSQL service container
