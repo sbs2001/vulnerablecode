@@ -23,7 +23,7 @@
 import json
 import requests
 import yaml
-import toml
+import pytoml as  toml
 
 
 def load_yaml(path):
