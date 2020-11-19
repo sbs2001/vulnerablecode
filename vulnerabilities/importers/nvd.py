@@ -32,7 +32,7 @@ from vulnerabilities.data_source import Advisory
 from vulnerabilities.data_source import DataSource
 from vulnerabilities.data_source import DataSourceConfiguration
 from vulnerabilities.data_source import Reference
-
+from vulnerabilities.helpers import create_etag
 
 @dataclasses.dataclass
 class NVDDataSourceConfiguration(DataSourceConfiguration):
@@ -55,7 +55,7 @@ class NVDDataSource(DataSource):
             # (url, etag) mappings in the DB. `create_etag`  creates
             # (url, etag) pair. If a (url, etag) already exists then the code
             # skips processing the response further to avoid duplicate work
-            if self.create_etag(download_url):
+            if create_etag(data_src=self, url=download_url, etag_key="etag"):
                 data = self.fetch(download_url)
                 yield self.to_advisories(data)
 
@@ -130,15 +130,3 @@ class NVDDataSource(DataSource):
             for cpe_data in node.get("cpe_match", []):
                 cpes.add(cpe_data["cpe23Uri"])
         return cpes
-
-    def create_etag(self, url):
-        etag = requests.head(url).headers.get("etag")
-        if not etag:
-            # Kind of inaccurate to return True since etag is
-            # not created
-            return True
-        elif url in self.config.etags:
-            if self.config.etags[url] == etag:
-                return False
-        self.config.etags[url] = etag
-        return True

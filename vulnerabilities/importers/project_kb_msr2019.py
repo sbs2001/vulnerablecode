@@ -35,11 +35,12 @@ from vulnerabilities.data_source import Advisory
 from vulnerabilities.data_source import DataSource
 from vulnerabilities.data_source import Reference
 from vulnerabilities.data_source import DataSourceConfiguration
+from vulnerabilities.helpers import create_etag
 
 
 @dataclasses.dataclass
 class ProjectKBDataSourceConfiguration(DataSourceConfiguration):
-    etag: dict
+    etags: dict
 
 
 class ProjectKBMSRDataSource(DataSource):
@@ -53,24 +54,12 @@ class ProjectKBMSRDataSource(DataSource):
         # (url, etag) mappings in the DB. `create_etag`  creates
         # (url, etag) pair. If a (url, etag) already exists then the code
         # skips processing the response further to avoid duplicate work
-        if self.create_etag(self.url):
+        if create_etag(data_src=self, url=self.url, etag_key="ETag"):
             raw_data = self.fetch()
             advisories = self.to_advisories(raw_data)
             return self.batch_advisories(advisories)
 
         return []
-
-    def create_etag(self, url):
-        etag = requests.head(url).headers.get("ETag")
-        if not etag:
-            return True
-
-        elif url in self.config.etag:
-            if self.config.etag[url] == etag:
-                return False
-
-        self.config.etag[url] = etag
-        return True
 
     def fetch(self):
         response = urllib.request.urlopen(self.url)

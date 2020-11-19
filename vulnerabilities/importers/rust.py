@@ -21,7 +21,6 @@
 #  Visit https://github.com/nexB/vulnerablecode/ for support and download.
 
 import asyncio
-import json
 from itertools import chain
 from typing import Optional, Mapping
 from typing import Set
@@ -29,7 +28,6 @@ from typing import Tuple
 from urllib.error import HTTPError
 from urllib.request import urlopen
 
-import pytoml as toml
 from dephell_specifier import RangeSpecifier
 from packageurl import PackageURL
 
@@ -37,6 +35,7 @@ from vulnerabilities.data_source import Advisory
 from vulnerabilities.data_source import GitDataSource
 from vulnerabilities.data_source import Reference
 from vulnerabilities.package_managers import CratesVersionAPI
+from vulnerabilities.helpers import load_toml
 
 
 class RustDataSource(GitDataSource):
@@ -173,8 +172,3 @@ def categorize_versions(
             unaffected.update(uncategorized_versions)
 
     return unaffected, affected
-
-
-def load_toml(path):
-    with open(path) as f:
-        return toml.load(f)

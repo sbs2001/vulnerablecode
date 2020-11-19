@@ -1,5 +1,5 @@
 # Author: Navonil Das (@NavonilDas)
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/vulnerablecode/
 # The VulnerableCode software is licensed under the Apache License version 2.0.
 # Data generated with VulnerableCode require an acknowledgment.
@@ -18,11 +18,10 @@
 #  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 #  VulnerableCode should be considered or used as legal advice. Consult an Attorney
 #  for any legal advice.
-#  VulnerableCode is a free software code scanning tool from nexB Inc. and others.
+#  VulnerableCode is a free software from nexB Inc. and others.
 #  Visit https://github.com/nexB/vulnerablecode/ for support and download.
 
 import asyncio
-import json
 from typing import Any
 from typing import List
 from typing import Mapping
@@ -40,6 +39,7 @@ from vulnerabilities.data_source import Advisory
 from vulnerabilities.data_source import GitDataSource
 from vulnerabilities.data_source import Reference
 from vulnerabilities.package_managers import NpmVersionAPI
+from vulnerabilities.helpers import load_json
 
 NPM_URL = "https://registry.npmjs.org{}"
 
@@ -146,8 +146,3 @@ def categorize_versions(
             aff_ver.add(ver)
 
     return aff_ver, fix_ver
-
-
-def load_json(path):
-    with open(path) as f:
-        return json.load(f)

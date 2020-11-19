@@ -1,0 +1,4299 @@
+commit 43bb7a78741de3793f26d9ef300af6fb60eb8cf8
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Sep 26 11:37:49 2020 +0530
+
+    WIP
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3e10ff3f6387c7ce6484b76952ca2152c7166088
+Merge: a44d173 fc01392
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Sep 21 15:40:55 2020 +0530
+
+    Merge pull request #257 from sbs2001/fix_ui
+    
+     Fix UI bug with vulnerability search view's pagination
+
+commit fc01392eaebeac2c1ee88fded8314cd63766d51d
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Sep 21 15:06:49 2020 +0530
+
+    :wrench: Fix UI bug with vulnerability search view's pagination
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit a44d173b926862542fc6107b416f217791efae4a
+Merge: 2cbfb89 7f1f476
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Sep 15 22:35:18 2020 +0530
+
+    Merge pull request #255 from sbs2001/refactor_importer_runner
+    
+     Refactor importer_runner.py
+
+commit 7f1f476cf003ae975134181e0bc117368c6f1e22
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Sep 15 18:22:33 2020 +0530
+
+    :bulb: Add comments to code in import_runner.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit cc7659f978b6ea17363511d25b7b30f52ccf45dd
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Sep 14 11:34:26 2020 +0530
+
+    :zap: Handle in-memory conflicts in importer_runner
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 2cbfb89f331ebfe7fe25d911dfa5be98705a9382
+Merge: 37b7668 aa13cf1
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Sep 11 11:16:22 2020 +0530
+
+    Merge pull request #254 from sbs2001/update_readme
+    
+    :memo: Update README and web interface to include reference to API
+
+commit aa13cf185d421acaa036a6e68854a85247439b66
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Sep 11 11:00:19 2020 +0530
+
+    :memo: Update README and web interface to include reference to API
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 37b76684a75c399545bcd626086fd5347ed20867
+Merge: f5e7feb 153f256
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Thu Sep 3 12:21:40 2020 +0200
+
+    Merge pull request #247 from sbs2001/rest_api
+    
+     Redesign  the rest API
+
+commit 153f256163045c5d383bdb79b3a9a8a8e96ff140
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 27 14:35:25 2020 +0530
+
+    :bulb: Add swagger docs for the API
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f5bd3bc96ecf2ec35b6da0618ff5ea0895538d1e
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Aug 26 10:30:27 2020 +0530
+
+    :recycle: Refactor serailizer methods into nested serializer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 4ae838c38b773cd9eda0ea401b1721bf8641aa96
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 25 16:39:11 2020 +0530
+
+    :ok_hand: Use PackageFilterSet instead of filtering in PackageViewSet
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 647edd46ff7463434d74e708aeb9e53a673d8b43
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Aug 21 17:29:46 2020 +0530
+
+    :white_check_mark: Add new tests for API
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 929d544de2534e4445dffab8a79a13386f33e5d6
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Aug 21 16:00:45 2020 +0530
+
+    :sparkles: Handle with packages with multiple qualifiers
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 52d2990078731c449097a65bcd06a2ad5ee03b07
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 18 14:31:15 2020 +0530
+
+    :hammer: Refactor existing tests for API
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3b966c01e497fd168a902b2efba27ab4e9ed7171
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 18 13:10:21 2020 +0530
+
+    :tada: Redesign and enhance the REST API
+    
+    The REST API now has a detail views for package and vulnerability.
+    The search API allows packages and vulnerabilities to be searched for using various
+    parameters. The design now uses hyperlinks and provides easy navigation.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f5e7febf024eeaf61b19d379a50735f97918b5f0
+Merge: 4069abe 1caad95
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Wed Aug 26 09:39:34 2020 +0200
+
+    Merge pull request #230 from sbs2001/curation_ui
+    
+    Add UI for VulnerableCode
+
+commit 1caad9577ab030622767bc802914fccfeba38c36
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Aug 26 11:13:39 2020 +0530
+
+    :heavy_plus_sign: Update requirements.txt and make code style changes
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 4069abe74c851209833d912cbee8da23c278438b
+Merge: 6efd714 1f28abd
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Fri Aug 21 16:04:49 2020 +0200
+
+    Merge pull request #234 from sbs2001/add-licenses
+    
+    Populate the licenses
+
+commit 1f28abd968a66d886bc2511382faae0d3d80d420
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 28 18:31:28 2020 +0530
+
+    Populate the licenses
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 6efd714e195375fe278d3301b7b3e33788b36dfb
+Merge: f735f8a 79bbf05
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 20 10:29:32 2020 +0530
+
+    Merge pull request #246 from sbs2001/new_readme
+    
+    Use New README
+
+commit 79bbf05cccd7d3b079439b2cf7b84a22d1ba7226
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 20 10:18:21 2020 +0530
+
+    :books: Use New README
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f735f8aa9cc64efd890a5db8876d4b0bb6933b4f
+Merge: 80f78da 56e719c
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Aug 19 21:50:39 2020 +0530
+
+    Merge pull request #245 from sbs2001/debian_bug_fix
+    
+    :bug: Fix bug in debian's response_is_new method
+
+commit 56e719c74736c049a2a96b12352a38019b0f5c91
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Aug 19 19:34:07 2020 +0530
+
+    :bug: Fix bug in debian's response_is_new method
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit c735c3585fcf78728db81b57f7c132aebabef94f
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Aug 15 15:04:55 2020 +0530
+
+    :heavy_minus_sign: Get rid of selectize js and jquery
+    
+    The purpose of selectize was to  allow users to select vulnerability and relate it
+    to some package. Selectize allowed users to get some autocomplete and filtering while
+    they searched for the vulnerability.
+    
+    We were already planing to replace selectize js since it is not maintained. Other similar
+    libraries are also not maintained as well(select2). Users don't need autocomplete for vulnerabilities
+    since they would alreay know the CVE id,hence it doesnt add much value as far as UX is considered.
+    A simple text input is used instead.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 5d3ee7f66b9a4e5a67ed315726e1f36333871a0a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Aug 14 11:22:26 2020 +0530
+
+    :pencil: Use normal static assests instead of minified versions
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 2443fc185e9f94cc29fdc8dde6eab52f9a38b933
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 13 23:13:08 2020 +0530
+
+    :sparkles: Add pagination to package search
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 80f78da812338d5f82a5c12c0561d505df7a327d
+Merge: 2a9f725 091d479
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 13 22:43:48 2020 +0530
+
+    Merge pull request #237 from sbs2001/add_etags
+    
+    Save  etags to importers wherever possible
+
+commit 2a9f7253f64b7923b1c12118f980349de96d08e8
+Merge: 594af84 76bb59a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 13 22:20:39 2020 +0530
+
+    Merge pull request #241 from sbs2001/use_last_date
+    
+    Check date before downloading data
+
+commit d6897b8c53e4f989525f9ac4e991bed303d3efd3
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 13 21:45:59 2020 +0530
+
+    :sparkles: Add pagination to vulnerability search
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 091d479f12bcb48f9b06532cc1b1e4ec08db6b37
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 29 22:35:03 2020 +0530
+
+    Leverage Etags in openssl importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f6e1bca51b432c0a8cc3aa6a5a8eac13659da7bd
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 29 19:58:26 2020 +0530
+
+    Add etags to safetydb importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 594af84c3d1c5d712434473f60c60b3e9c364087
+Merge: 916dc0d 3993718
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Tue Aug 11 18:15:01 2020 +0200
+
+    Merge pull request #236 from sbs2001/async_api
+    
+    Use ayncio for making  API  calls to obtain package versions
+
+commit 39937184e362c1c641bdb1814f76a56d5c3d7f31
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jul 31 12:09:50 2020 +0530
+
+    Remove TODOs for package_managers.py as they are done
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f58daecd002153a3bfb4d24de44dca3d3a913196
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jul 31 12:05:39 2020 +0530
+
+    Use async for Maven, Nuget and Composer VersionAPI
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit bbc094b264ee0471bda56f51a1818ac7e0897d8d
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 30 13:14:56 2020 +0530
+
+    Use async in NpmVersionApi
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 877a9f5fff6ddf94394911154806dd1df3ed2324
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 30 12:19:59 2020 +0530
+
+    Use async in  PyPiVersionApi
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3d4e202f930416996baa9d517efb3db6f43fafba
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 30 11:08:41 2020 +0530
+
+    Update the mock for RubyVersionAPI in  test_ruby.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3c4ffdf91f0f2a72b70fbe3907d01efa51a46a96
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 29 18:22:05 2020 +0530
+
+    Use async for ruby importer's version API
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 56b6ed279d403c016cc6d4166c654643e70cf100
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 29 13:08:36 2020 +0530
+
+    Use async version api for rust importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 7a4f3e26f97065d69d0a98c63fb0e21430c7b760
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jul 24 14:16:10 2020 +0530
+
+    Use main maven central endpoint, reduces use of map filter lambda
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit a36232d2272ecc9af976927279f6c8aba8e72e6e
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jun 19 15:13:22 2020 +0530
+
+    Add a package_managers module
+    
+    Before this commit every Importer had it's own VersionAPI class, which was
+    used to fetch all versions of a package from the corresponding package manager.
+    
+    This was problematic due to 2 reasons (1)  Reusing these VersionAPI was hacky
+    (2) The importer files would contain most of the code related to fetching this
+    version info.
+    
+    This is fixed by putting all this VersionAPI classes into one
+    vulnerabilities/package_managers.py module and the importers will now import
+    the classes from here.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit c09bbdd7d018545d831fe002535b2f9d9491341c
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 11 14:52:13 2020 +0530
+
+    :page_facing_up: Add LICENSE and ABOUT files for third parties
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 4340264e985a8f41f59890f527a7c1db6d3e897f
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 11 13:32:57 2020 +0530
+
+     :page_facing_up: Add license metadata for bulma
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit d8afc735bcea55d87e4708ea9c4806caac8837cf
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 11 13:31:07 2020 +0530
+
+    :page_facing_up: Add metadata for lib_oval.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 916dc0d920d02f94f1cd8201060b1878e2394324
+Merge: 6a2a1b6 52c7e89
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Mon Aug 10 15:46:54 2020 +0200
+
+    Merge pull request #227 from sbs2001/stick_ref_ids_with_urls
+    
+    Stick ref ids with urls
+
+commit 52c7e89200bdd397351d4a3cc8449300269a55a9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jul 26 10:22:23 2020 +0530
+
+    Change VulnerabilityReferenceUnit to Reference
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit a195a5dd952527b5f42d3688f8cf92e216c30f41
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 23 14:52:07 2020 +0530
+
+    Fix wrong ref urls in archlinux importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit c53176670eab18268a9938f6dff359366287d1cd
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 23 11:55:30 2020 +0530
+
+    Refactor github api importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 747b9efc0ba1abfe3bd4678a7baf9c4c6fd27663
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 16 19:43:11 2020 +0530
+
+    Do the style changes to follow coding standards
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit d0e4b95d017d882008b0ea0219324585b26e8b8d
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 16 19:28:35 2020 +0530
+
+    Refactor all importer tests to  work with VulnerabilityReferenceUnit dataclass
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit eb4b1c4ea2a4553737cadff888d180ef538fe5b9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 16 19:28:14 2020 +0530
+
+    Refactor all importers to  work with VulnerabilityReferenceUnit dataclass
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 6eaf82cf5487f4c8cf46911714eb98eb6c022cc0
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 16 19:26:56 2020 +0530
+
+    Refactor importer_runner.py to  work with VulnerabilityReferenceUnit dataclass
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f5c100d29f1756d6e5fd98461afa8de728d49afd
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 16 19:26:27 2020 +0530
+
+    Refactor OvalDataSource to  work with VulnerabilityReferenceUnit dataclass
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 9f3496f193e443ea1ae0b10c336ab855c4ceeb09
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 15 14:30:53 2020 +0530
+
+    Add data class for vulnerability reference
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 38905e06be5359fc96cb28d6be64d1e90fbe6557
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 6 19:03:30 2020 +0530
+
+    :bug: Avoid giving user the opportunity to create conflicting relations
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 398311920f532c513f00af9f54150358bdfd14d3
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 6 18:02:02 2020 +0530
+
+    :art: Make aesthetic changes.
+    
+    Add margins and paddings. Get rid of Remove button.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 2a0b6d10ff7762049281476d4ed6fe368eb7c601
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 6 16:17:21 2020 +0530
+
+    :bug: Fix get_success_url method of PackageUpdate view
+    
+    Upon updating, previously user would get a blank screen. This
+    is fixed.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 0a1d007c99e1c0af5df6c67aba04727478647e69
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 6 13:49:19 2020 +0530
+
+    :ok_hand: Use subtitle o hint creation of vulnerability
+    
+    In the packagerelatedvulnerability_create.html a subtitle
+    with  a hyperlink is added to hint the user to create a
+    vulnerability if the desired vulnerability is not found
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit a18d4527748a96f81df9a8e93e70af1b8523856a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Aug 6 13:24:32 2020 +0530
+
+    :hammer: Squash views for impacted and resolved into one view
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 76bb59ac620e447cd382f10e86399b368f0fd38f
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Aug 5 15:54:43 2020 +0530
+
+    :heavy_check_mark: Add test for date checker
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 1575db20d5d2a0fc44651a19f631f9806a3ae64a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Aug 5 13:19:15 2020 +0530
+
+    :sparkles: Leverage last-modified date in debian importer
+    
+    Debian's security tracker provides a last-modified date in  response header.
+    This is leveraged by comparing it to date the importer was last ran. If
+    it is ran before the last-modified date we can proceed to do normal import,
+    otherwise stop since we already have the data.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 6a2a1b6b26be93948831b1be785d4d2875c93784
+Merge: 2bc8817 1551700
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 4 16:00:36 2020 +0530
+
+    Merge pull request #240 from sbs2001/update_docs
+    
+     Update docs for importer_yielder.py
+
+commit 1551700fe561291ed8512129415da2424517f347
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Aug 4 15:49:00 2020 +0530
+
+    :books: Update docs for importer_yielder.py
+    
+    Due to addtion of importer_yielder.py, it is not required to
+    write a migration  script for each  importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit fda98d2baab04515ce2078545b253bf4d94c3db9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jul 31 19:20:53 2020 +0530
+
+    Change title of the templates
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 2bc88178b302c1d2332d30783a3539d14daf1667
+Merge: a15c726 0205f14
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 28 18:44:43 2020 +0530
+
+    Merge pull request #235 from sbs2001/remove_prints
+    
+    Remove print statements
+
+commit 0205f14cf75036b7dbed699b2a98073dfc425a28
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 28 18:39:09 2020 +0530
+
+    Remove print statements
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit b99675df3762adeca91aa4ef370f04f8a0bd5bce
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jul 24 12:06:43 2020 +0530
+
+    Don't use CDN, self host instead
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit a15c726a83b515cc4566b79110901056279bd31e
+Merge: 94b5e74 66f55f8
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Thu Jul 23 14:35:55 2020 +0200
+
+    Merge pull request #228 from sbs2001/use_nodejs_git_repo_for_npm_importer
+    
+    Use node js git security advisories instead of using npm registry
+
+commit 66f55f88838ac3e4ba44987cd4b3f882b78e32f0
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 23 17:47:36 2020 +0530
+
+    Remove NPM importer's migrations, rely on importer_yielder.py instead
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f3e3e4ec684a9afb7a7dbcaa71fd7aa0152467a8
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jul 17 14:49:08 2020 +0530
+
+    Make style corrections
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 14ad120fd1735d0850810d72ae7f2beee371cffc
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jul 17 14:36:56 2020 +0530
+
+    Use node js git security advisories instead of using npm registry
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 38d90a0244b6b7d951f777b215faede8a66d86ba
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 21 15:40:30 2020 +0530
+
+    Pass function instead function call in forms
+    
+    This is done because when running migrations, the function
+    which made db queries was being run hence failing the CI.
+    By passing the function itself instead, this issue is fixed
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 7b8835a0c18045613f8ca13f4d37dcac4ff42ab6
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 21 13:43:23 2020 +0530
+
+    Format code to follow code style guidelines
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 776af5c7aaf243180f58d3216cdd8c96c50e78b7
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 21 13:39:05 2020 +0530
+
+    Remove unused templates
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 8e03a2e512df9604d307c53f8652c5a685f38634
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 21 12:22:18 2020 +0530
+
+    Manage static assets.
+    
+    Use bulma's minified version. Remove inline css to a
+    separate stylesheet custom.css . Delete Unused js.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f8e9e2df31b3ce738af9b869a2de446c93ae40a8
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 21 10:49:08 2020 +0530
+
+    Refactor views for new models, do some style changes
+    
+    The views are now based on PackageRelatedVulnerablity model.
+    Apart from that out of need, the properties vulnerable_to and
+    resolved_to are added to Vulnerability and Package models.
+    Style changes include centering the search bars.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit ef9028528793b6da50e08ce3fa012b3a40334f28
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jul 20 11:27:36 2020 +0530
+
+    Get selectize working instead of long dropdowns
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit e3d421b36523eb830caf09fd7f0b2c37cecc7821
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jul 18 20:04:46 2020 +0530
+
+    Update requirements
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 4e0f7415564b421a29f67ffc9d6d4866742b4dd6
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jul 18 20:03:23 2020 +0530
+
+    WIP
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 14d1fc73fd96f8316ad83ea025bd45af8c6d3603
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 15 10:00:00 2020 +0530
+
+    Organise views
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 9c71ff12690378128d5c41eb8a9cdd6e70c6c4d5
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 15 09:59:28 2020 +0530
+
+    Organize templates
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 6df8c1f85d996bddc30e53a9a484ed295a3aa01a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jul 13 21:28:55 2020 +0530
+
+    Add view for adding references for vulnerabilities
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 0b4e8fb13fc782a69b8877d1cc26718c55c9367f
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 9 14:23:13 2020 +0530
+
+    Implement Views
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 6dbeabd3fd8917d1e9ead5fd233400459ccbf2a9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jul 9 14:15:20 2020 +0530
+
+    Add bulma CSS framework
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 94b5e743a8752b4e67587d89ab1a35adac4629f3
+Merge: 478b7e8 fe442bf
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Wed Jul 22 14:35:10 2020 +0200
+
+    Merge pull request #204 from sbs2001/github_api_importer
+    
+    Add GitHub API importer
+
+commit fe442bf6c1851a23a066b5d03457be77ee773a54
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 22 17:00:13 2020 +0530
+
+    Refactor migrations for github  api importer
+    
+    Github API importer was made pre importer_yielder.py era.
+    This commit adds the seed data to importer_yielder.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 16371fad76b17a3de319ca2238f0bfbfa855eb5c
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jun 17 16:19:20 2020 +0530
+
+    Make more style corrections in GitHubAPI importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit d7d25f0883d4dcda5214ebf499664bbf588624e9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jun 17 12:13:39 2020 +0530
+
+    Make GitHub importer have consistent style, by replacing double inverted commas to single inverted commas
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3ccb9ccbd95895e7e30144dc7c0db0ce46736c8b
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jun 17 12:03:46 2020 +0530
+
+    Add tests for Github importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3e5b00e47503c7982ee863c24b3332fb8ac288e9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jun 16 12:40:42 2020 +0530
+
+    Add support for composer vulnerabilities
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 56126ab09d02c07d7dc1c8a4dd31b248132e9935
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jun 15 22:06:37 2020 +0530
+
+    Add import NUGET ecosystem data from GitHub API
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit bec7309bdce81293a0394583d142e30082686abb
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jun 15 14:30:37 2020 +0530
+
+    Add GH_TOKEN environment variable in Travis CI
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 445612372c12394da1558ddb1820e2bef635c972
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jun 15 12:54:18 2020 +0530
+
+    WIP : Add GitHub API importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 478b7e85b875a7dd695dd1008598b6d9b9d151fb
+Merge: 72abb0d b5927b3
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Wed Jul 22 13:17:04 2020 +0200
+
+    Merge pull request #221 from sbs2001/remove_migrations
+    
+    Remove migrations and add importer yielder module
+
+commit 72abb0d864e1a5e34c14d410aaeb1e510bf7ac40
+Merge: 58d0376 189582d
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Wed Jul 22 13:14:23 2020 +0200
+
+    Merge pull request #219 from sbs2001/remove-impacted_package
+    
+    Refactor ImpactedPackage and ResolvedPackage
+
+commit 189582d38c2da0edbc3991865e6a25c685964d59
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 14 16:28:18 2020 +0530
+
+    Revert _process_added_advisories, make style changes
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit b5927b30f69430be6d737918e38be9cc12409e9c
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 14 13:51:55 2020 +0530
+
+    Add tests for importer_yielder.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit d876a78b2e2dc69322bf16e292a980b97be6e1e7
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 14 12:21:01 2020 +0530
+
+    Rebase with develop
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f67e11e48c8da195c94c3d5fa6c198f501e81303
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jul 14 11:46:37 2020 +0530
+
+    Refactor import.py to comply with new importer_yielder.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit b5049a80327400320e109860a536cf1285b8e208
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jul 13 22:00:34 2020 +0530
+
+    Delete importer_registry.json
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 0a87a7fe7d585afdc1cdc12f3c1e26ea8424ec2e
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jul 13 21:59:28 2020 +0530
+
+    Remove JSON importer seed, keep the data instead in importer_yielder.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 14ff4dd0bef77adb5ed718eee489ff5b3e2110a4
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jun 29 12:45:45 2020 +0530
+
+    Add ImporterYielder class and make changes in import command
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 762fa1e62a376154ebbc8f407cd1a6c725ab9195
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jun 29 12:42:44 2020 +0530
+
+    Add importer registry
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 7b6c51f8bb6d4b30cc4836de31c0ea18a231483c
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jun 29 12:40:06 2020 +0530
+
+    Delete migrations
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 35280ff7683e2f650b70d91defefc74486e8d48d
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jul 6 19:55:41 2020 +0530
+
+    Refactor codebase to use PackageRelatedVulnerability
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 5fcb5ea0808204d4a6494c79c9fadd027182bd3b
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jul 1 13:36:47 2020 +0530
+
+    Bulk insert at an importer level in ImporterRunner
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit bfda9af785b7fe60404529f1f7c82bb0748bdcb6
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jun 30 16:56:46 2020 +0530
+
+    Remove magic methods and properties in ImportRunner
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit c421fe1ed912572fd41cfb666a2d3f72be06e7a8
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 28 13:36:17 2020 +0530
+
+    Refactor ImpactedPackage and ResolvedPackage into one Vulnerability_Package_Relation
+    
+    Changes are made in import_runner.py to refactore the models.
+    Other major changes in import_runner.py is to change the _process_updated_advisories
+    method to use less db queries and increase performance by several times.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 58d0376e7319d06387662cb393f3c39d9893088d
+Merge: 8788014 bf44896
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Jun 30 16:14:40 2020 +0200
+
+    Merge pull request #222 from haikoschol/fix_get_or_create_vuln
+    
+    Always store summary of vulnerability
+
+commit bf44896a3772b86fb71666218e6d7e918eec0be2
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Jun 30 15:22:59 2020 +0200
+
+    Always store summary of vulnerability
+    
+    Before this change, when a new vulnerability was stored for an advisory
+    that has both a CVE ID and a summary, the summary was not included.
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 8788014229419c2d34342a2edb76af1850f5b2b3
+Merge: 3041144 bfba423
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Jun 30 15:14:37 2020 +0200
+
+    Merge pull request #213 from sbs2001/ubuntu_usn_importer
+    
+    Add ubuntu usn importer and it's tests
+
+commit bfba423ec51b63fc6bc13e5a431cf963309e5611
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 21 23:12:40 2020 +0530
+
+    Add ubuntu usn importer and it's tests
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 30411446a77994f0142166e81c87f8fc27b50798
+Merge: fe1026a 0f5039b
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 28 14:00:55 2020 +0530
+
+    Merge pull request #220 from sbs2001/oval_memory_fix
+    
+    Use yield to save memory in OvalDataSource's updated_advisories
+
+commit 0f5039bac9e68d22646e35ecfc0462c5898f08eb
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 28 13:41:59 2020 +0530
+
+    Use yield to save memory in OvalDataSource's updated_advisories
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit fe1026ab5964c612ddb29202127b400e648109a2
+Merge: d8d45b6 19e19f6
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Jun 25 09:58:04 2020 +0200
+
+    Merge pull request #214 from sbs2001/add_docs
+    
+    Add docs directory and add tutorial about adding new importer
+
+commit d8d45b62d91490c5834a2923d0bce5750a70e6d4
+Merge: 1e0da40 c5f8a68
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Jun 22 16:44:20 2020 +0530
+
+    Merge pull request #211 from sbs2001/remove_unused_script
+    
+    Code cleanup.
+
+commit 19e19f69fef6d9bcfea1d51bb338fac1aa823308
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jun 18 19:42:31 2020 +0530
+
+    Add docs directory and add tutorial about adding new importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit c5f8a688e79c64dee9cca53ad50c16d811b988e2
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 20 20:21:49 2020 +0530
+
+    Remove data_dump.py , ubuntu's old test data files , modify pytest conf
+    
+    data_dump.py is finally obsolete, hence removing it.
+    Ubuntu now uses OVAL hence removing it's old test_data.
+    To achieve this some changes in pytest's conftest.py were made,
+    by removing old fixtures which were unused.
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 1e0da4002ee3f7a66cf560e41c313d0d6722a481
+Author: buzzlightyear <37532050+edoardolanzini@users.noreply.github.com>
+Date:   Fri Jun 19 08:35:18 2020 +0200
+
+    OpenSSL importer (#205)
+    
+    * Add  OpenSSLDataSource importer and it's tests
+    
+    Signed-off-by: Edo <e.m.lanzini@student.tudelft.nl>
+
+commit d33bd5215a94ea4301763baaf29f3cf22d86a9b4
+Merge: b10474a 2feb32c
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sun Jun 14 12:57:50 2020 +0200
+
+    Merge pull request #203 from sbs2001/gentoo_advisory_importer
+    
+    Add Gentoo Linux Security Advisory importer and it's tests
+
+commit 2feb32cb030b2434f40692d5f0a1c9063498e1b0
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 14 09:38:46 2020 +0530
+
+    Add Gentoo Linux Security Advisory importer and it's tests
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit b10474a128f389432acac5f43455804b13b10e7d
+Merge: 35de0c2 fcfb32b
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri Jun 12 14:32:58 2020 +0200
+
+    Merge pull request #202 from sbs2001/redhat_cves
+    
+    Add red hat importer and it's tests
+
+commit fcfb32b99a0ce25f4b05a266807d5dce00166ab3
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu Jun 11 18:22:24 2020 +0530
+
+    Add red hat importer and it's tests
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 35de0c2eeeb3433629270d127abb71bb32612630
+Merge: 952e33f c6e9566
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed Jun 10 19:12:10 2020 +0200
+
+    Merge pull request #201 from sbs2001/jsonfield_qualifiers
+    
+    Use JSONField instead of CharField to store a Package's qualifers
+
+commit c6e95666a031ea925f3b5d1bf2076670b5db11b5
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jun 10 17:48:57 2020 +0530
+
+    Use JSONField instead of CharField to store a Package's qualifers
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 952e33fc5dbbc66cd669b7eb6eda40ee83916bb0
+Merge: e194649 5c13ce6
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed Jun 10 13:36:15 2020 +0200
+
+    Merge pull request #200 from sbs2001/debian_oval_importer
+    
+    Add Debian OVAL importer
+
+commit 5c13ce68adcefec4820b0c1a74f10eec9b94eb08
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Jun 9 19:04:22 2020 +0530
+
+    Add Debian OVAL importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit e194649f246dcb6ccadb97a0d398a1e1adcdf3d9
+Merge: 6e9dde0 c5b2884
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Jun 10 08:18:52 2020 +0530
+
+    Merge pull request #199 from haikoschol/fix_version_maxlen
+    
+    Fix max_length for Package.version in initial migration
+
+commit 6e9dde07089d30810fc847e9c8d3770b728700de
+Merge: 826de10 2a1cf66
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Jun 9 20:32:34 2020 +0200
+
+    Merge pull request #194 from sbs2001/suse_backport_importer
+    
+    Add SUSE backport data source and it's tests
+
+commit c5b2884c7ab060ff3516e31f59fe5872ca4dd931
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Jun 9 20:24:16 2020 +0200
+
+    Set max_length=100 for Package.version in initial migration
+    
+    I forgot to update this when switching to a newer release of
+    packageurl-python, which has the limit set to 100.
+    
+    Since there is no production deployment of the project yet, I changed
+    the existing migration instead of adding a new one that modifies the
+    column.
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 2a1cf66a0ae54750b4c3ae49d66e03a82dfe26ea
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 7 14:45:35 2020 +0530
+
+    Add namespace=opensuse for SUSE data source
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 05fec1d9224845827d32def023bd18c714012f71
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 7 14:31:54 2020 +0530
+
+    Add SUSE backport data source and it's tests
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 826de1066794546bb02d1073bac28acde01f0284
+Merge: 995a702 8c4876d
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Jun 9 18:24:13 2020 +0200
+
+    Merge pull request #195 from haikoschol/fix_store_summary
+    
+    Store summary in `_insert_vulnerabilities_and_references()`
+
+commit 995a70208eb00e743af77b2782e6541ce36f5798
+Merge: aded87c 4eb29ea
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Jun 9 18:21:26 2020 +0200
+
+    Merge pull request #193 from sbs2001/add_retiredotnet_data_source
+    
+    Add importer for RetireDotnet
+
+commit 8c4876d833b0d9eed160fe6b716dd714bbfa3ec7
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Jun 8 12:43:38 2020 +0200
+
+    Store summary in _insert_vulnerabilities_and_references()
+    
+    Bugfix: For advisories with a CVE ID that don't exist in the database
+    yet, the summary was not stored.
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 4eb29ea8886fb0782ae2c515004b2e5226f5b9a4
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Jun 7 10:50:06 2020 +0530
+
+    Add RetireDotnetDataSource, and its tests
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit aded87c2e3a860c07cb47d4bfe919064b8326d74
+Merge: 75a4867 4e19a12
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Jun 8 11:19:34 2020 +0200
+
+    Merge pull request #188 from sbs2001/ubuntu_oval_rewrite
+    
+    Ubuntu oval rewrite
+
+commit 4e19a120fea2d25a93d343dd572c4498d9d236b1
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 18:08:03 2020 +0530
+
+    Add tests for etags and  change added_advisories to updated_advisories in OvalDataSource
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 82ce33e5fa373522b108b398426de8c435206970
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 13:53:51 2020 +0530
+
+    Cleanup OvalDataSource and UbuntuDataSource, add etags to ubuntu migration script
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 0a857ed2813f2bf0dad9c1d7900cecff884141e9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 12:37:02 2020 +0530
+
+    Store etags and utilise them, cleanup the ubunutu VersionAPI
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 34de081cb5b93eb6e6a8a2f59cb09522a4feafb6
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Jun 5 15:57:46 2020 +0530
+
+    Add OvalDataSource, refactor UbuntuDataSource to inherit from OvalDataSource
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit a35db614da46762e927da290b5dd8dc495e96ad4
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri May 29 20:11:33 2020 +0530
+
+    Fix style
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit ea9974b406036e428dd8d57217ff727f08ae61ae
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri May 29 19:04:55 2020 +0530
+
+    Add ubuntu data source which uses OVAL files
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 42a9945b3b052588bd453f102a905e7730801108
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri May 29 19:02:42 2020 +0530
+
+    Avoid collecting 'binaries' of OVAL files and add tests for UbuntuDataSource(yet to be implemented)
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3f5904abc0927493d612762c551cdf82f4978a12
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri May 29 19:01:30 2020 +0530
+
+    Remove tests for old ubuntu importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit cd4a9566ec57e380cf949b74897ba176da3da12b
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 09:59:21 2020 +0530
+
+    Make the config of  updateable
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 75a4867e91e9b4a7a5c12938d93f01ad62ccfe92
+Merge: 623fa2c 0a7c6fc
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Jun 6 17:04:40 2020 +0200
+
+    Merge pull request #191 from sbs2001/make_config_writeable
+    
+    Make the config of Importer  'updateable'
+
+commit 0a7c6fc01b0d0b4d8b09be63926e58504c7d861a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 09:59:21 2020 +0530
+
+    Make the config of  updateable
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 623fa2cc4627e7e1e9f9142adb32f50692af02b6
+Merge: 0dd2c5b fc505f5
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 10:19:13 2020 +0530
+
+    Merge pull request #192 from sbs2001/fix-cli
+    
+    Add type conversion to int for batch_size , when batch_size is specified via cli
+
+commit fc505f5072ec25debc08b676460e782b006f0924
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 10:14:06 2020 +0530
+
+    Add type conversion to int, when batch_size is specified via cli
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 0dd2c5bffe0285680f04085bf88c4ffe5d77f3e5
+Merge: de1b8e7 41db3e3
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Jun 6 07:50:11 2020 +0530
+
+    Merge pull request #190 from nexB/dependabot/pip/django-3.0.7
+    
+    Bump django from 3.0.3 to 3.0.7
+
+commit 41db3e3400f1360c714642e46516bb59af1c848c
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Jun 5 16:53:53 2020 +0000
+
+    Bump django from 3.0.3 to 3.0.7
+    
+    Bumps [django](https://github.com/django/django) from 3.0.3 to 3.0.7.
+    - [Release notes](https://github.com/django/django/releases)
+    - [Commits](https://github.com/django/django/compare/3.0.3...3.0.7)
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit de1b8e77aa3e7a44cbea0a9126f362e211a4706a
+Merge: 4f5caea 52a0fc1
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Jun 4 17:05:20 2020 +0200
+
+    Merge pull request #189 from haikoschol/fix_advisory_hash
+    
+    Fix Advisory.__hash__()
+
+commit 52a0fc10a09705442af039e9e46b4d14e9abc121
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Jun 4 16:39:53 2020 +0200
+
+    Fix Advisory.__hash__()
+    
+    The hash is computed from a string, which is built by iterating over
+    attributes of type Iterable/Sequence, such as impacted_package_urls.
+    
+    This change sorts those attributes before concatenating to the string,
+    to avoid different hashes when the order of impacted_package_urls, etc
+    differs.
+    
+    NB A better solution would be to avoid implementing __hash__() and use
+    immutable collections like tuple and frozenset for the above mentioned
+    attributes instead.
+    
+    See https://eng.lyft.com/hashing-and-equality-in-python-2ea8c738fb9d
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 4f5caea0ff14a6e1a7584a5f342e016e9d22de9c
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu May 28 13:29:10 2020 +0200
+
+    Fix config for SafetyDB importer
+    
+    The migration that adds the SafetyDB importer used the URL of the git
+    repository. However the importer is not actually based on GitDataSource,
+    since the repository only contains a single file with all security data,
+    so there is no advantage over just downloading the current version from
+    master via HTTPS.
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 1f40a0381614daebff4a7125a27c085f7f4aa9c0
+Merge: 77c8c10 7593f29
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Thu May 28 16:26:25 2020 +0530
+
+    Merge pull request #185 from sbs2001/ruby_importer_rewrite
+    
+    Ruby importer rewrite
+
+commit 7593f2928375419a1298ed09fa8675366df1fcf0
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 27 20:12:18 2020 +0530
+
+    Removed minor optimisation which could be the cause of bugs in case same vulnerability affects different packages
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 48f495a444e1097a061e4753ec6b7dc532f327e2
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 27 10:45:03 2020 +0530
+
+    Rename  to . Utilise  in RubyDataSource. Add caching in rubyAPI . Fix reference_urls in RubyDataSource
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 2b6b3eb883fd9411e0b0e1c0a91a62d3cd2a4768
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue May 26 11:20:21 2020 +0530
+
+    Update 0008_ruby_importer.py
+    
+    Corrected a typo in remove_ruby_importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 274cf66b29364a39c09ec1a716064f8f5459e1cd
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon May 25 20:16:36 2020 +0530
+
+    Add requests to requirements.txt, change _process_file to process file in rubyDataSource. Also avoid calling process_file twice
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit cf30111ea0965037e95a67c7524ff53b1de28f07
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon May 25 20:06:39 2020 +0530
+
+    Add test for ruby importer and modularise the the ruby importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 0331c282e74b379c56783abaffe95b018dfe5c0e
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun May 24 20:45:55 2020 +0530
+
+    Make style corrections
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit b50a4f4f515146616cfe0d87f8a08b918d593df0
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun May 24 20:42:51 2020 +0530
+
+    Add migration script for ruby importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit ac7a4a82e6c33db1004c00d1afeaf566cd9f79d6
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun May 24 20:42:08 2020 +0530
+
+    Add ruby data source
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 77c8c10ce0f59cbe106ffd3350f4713720861591
+Merge: 946ff73 efe5769
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue May 26 18:34:29 2020 +0530
+
+    Merge pull request #186 from sbs2001/cli_batchsize
+    
+    Add CLI option to specify batch_size for the ImportRunner
+
+commit efe57694e33a8d898739630a024f3bbd8b427f3b
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue May 26 18:25:12 2020 +0530
+
+    Add CLI option to specify batch_size for the ImportRunner
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 946ff73869b893c628234c2001efd26117485284
+Merge: 29f3351 9202ba0
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun May 24 13:29:04 2020 +0530
+
+    Merge pull request #184 from sbs2001/fix_schema_validator_alpine
+    
+    Update the schema validator in  alpine linux importer
+
+commit 29f335189a3406675bc809bea70405c3b0b7d0a9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun May 24 13:27:04 2020 +0530
+
+    Update style check instructions in README
+
+commit 9202ba0ebfd1533ce343c94e7a87ddeb69736575
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun May 24 13:20:21 2020 +0530
+
+    Update the schema validator in  alpine linux importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 51bb8ce0b273cf1a8f0455707fc4ccdc4efb1f9b
+Merge: 13be1e6 b74bbe4
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat May 23 19:21:30 2020 +0200
+
+    Merge pull request #152 from haikoschol/123-vulnsrc-in-db
+    
+    Manage vulnerability sources in database
+
+commit b74bbe46599106257ec3e5cd9f2ffc09206345ac
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat May 23 18:37:00 2020 +0200
+
+    Fix lint
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 42c99fb701a2d3fa47218a886c6ffe657cb39ad0
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat May 23 16:56:36 2020 +0200
+
+    Update required Python version in README and Travis
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit f342feed937adb79215c89179e7cb3cba2a4e9c2
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat May 23 14:43:30 2020 +0200
+
+    Implement NPM importer based on DataSource
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 3f52a1bdc5133d11735a21440ae666a6d912c812
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri May 22 17:20:30 2020 +0200
+
+    Harmonize naming of package version caching class
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 1e9a1d3fbf7ce479cdfd1bca48fc8f6ccc3d7b5c
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri May 22 17:16:38 2020 +0200
+
+    Add often required functionality to DataSource
+    
+    Many derived classes need a Unix timestamp with the cutoff date as well
+    as a method to split a list of advisories into batches.
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 8d4592b02806aef1664e0b38bd02f240e56b0a4f
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri May 15 22:45:35 2020 +0200
+
+    Implement SafetyDB importer based on DataSource
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit b4008a57910dd6af72ae8cde154ce23ce3741252
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri May 15 19:58:44 2020 +0200
+
+    Implement Debian importer based on DataSource
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 8b3277ecf28e4c3acfeb5b5612439b961954972f
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri May 15 17:01:11 2020 +0200
+
+    Implement Arch Linux importer based on DataSource
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 740152a515d6a6bf0de5bb607db6ecb112395ba8
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu May 14 18:00:05 2020 +0200
+
+    Uncomment temporarily disabled tests
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit ee9e23532a74fd24dc6c8085f810dc52b6aafc1c
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu May 14 17:57:45 2020 +0200
+
+    Clean up ImportRunner and DataSource
+    
+    Reduce the amount of converting between PackageURL and string to the
+    bare minimum. Add/improve some type annotations and reduce API surface
+    area.
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 33fa0947740b2790262a91d48d83de152c4e91ed
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu May 14 15:55:51 2020 +0200
+
+    Implement Alpine importer based on GitDataSource
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 2672d5efdaed5765523a05d1976672683a64a93c
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon May 11 15:52:00 2020 +0200
+
+    Implement Rust importer based on GitDataSource
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit d0a25acd28de140694b24d1553dc26392658d657
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue May 5 17:58:45 2020 +0200
+
+    Make Advisory type hashable
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit b4a945a775a1f0e076a15989f5fb908c5eb7033f
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue May 5 17:13:35 2020 +0200
+
+    Return absolute paths from GitDataSource.file_changes()
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 2e208c4c23cff27140ab776b372e9165e51f3dde
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon May 4 19:07:52 2020 +0200
+
+    Remove call to deleted method DataSource.apply_config()
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 2c482402b94c50aac3b81ca83cd5cfbf9c7ffc63
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon May 4 16:38:47 2020 +0200
+
+    Fix typo
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit ff9ffeed7dbfb28d27ae30c31666db51b05e2d65
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon May 4 15:54:22 2020 +0200
+
+    Improve GitDataSource API
+    
+    Having separate methods added_files() and updated_files() is not ideal
+    since the same file can be returned by both methods. When a file has
+    been added and then later modified within the window of time considered
+    by these methods, the file should only be reported as an added file.
+    
+    Therefore this commit combines the methods added_files() and
+    updated_files() into file_changes(), which returns a tuple of sets for
+    added and updated files, respectively.
+    
+    It also fixes a time-math issue; commit timestamps are converted to UTC
+    before being compared to the cutoff timestamp (that is always in UTC).
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 5b649776153fc8c04aabe7e05d9b22bd208f3937
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri Apr 10 23:37:00 2020 +0200
+
+    Add base class for git-based data sources
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit bff02fe0a0b59fdbaa6fdb9fd2adc6e970ee8592
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Feb 8 17:28:07 2020 +0100
+
+    Store importer metadata in database
+    
+    This change introduces the model Importer, which contains metadata and a
+    pointer to the implementation of the importers DataSource subclass. This
+    subclass knows how to query whatever storage mechanism is used in that
+    case (e.g. git repository with yaml files, a single OVAL XML file, HTTP
+    API returning JSON, etc.)
+    
+    Additionally it defines an API and data model that DataSource subclasses
+    need to provide to ImportRunner. ImportRunner leverages that API and data
+    model to efficiently store vulnerability information in the database.
+    
+    Existing importers have not been migrated yet (only renamed from "scraper").
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 4657a8a33cfeec373560078acf0b212258862049
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Mar 3 15:59:49 2020 +0530
+
+    Add  importer for safetydb
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 13be1e631b5f8ac496b586c282f9b087ddf7e674
+Merge: e812ce6 063ed35
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed May 20 13:10:07 2020 +0200
+
+    Merge pull request #183 from sbs2001/general_oval_parser
+    
+    Generalise the UbuntuOvalParser to work with SUSE oval files
+
+commit 063ed35309026af2f3f61266be0a7e2725cbfe7c
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 20 15:47:50 2020 +0530
+
+    Generalise SUSEOvalParser and UbuntuOvalParser into a single OvalParser
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 4318ea9594db121327f9b47200f76242713aeb3e
+Merge: e812ce6 707f3db
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 20 13:48:52 2020 +0530
+
+    Resolve conflicts for SUSE OVAL parser
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit e812ce65a7b089f6dbcafa2e9e956de469b2fa17
+Merge: 736a9b2 bcb0ff4
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 20 12:09:11 2020 +0530
+
+    Merge pull request #182 from sbs2001/rm_performant_oval_parser
+    
+    Update lib_oval.py and remove PerformantOvalDocument from oval_parser.py
+
+commit bcb0ff4610fb782b028c5162ba66b93ac05bea24
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 20 11:44:54 2020 +0530
+
+    Update lib_oval.py and remove PerformantOvalDocument from oval_parser.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 707f3db728133445a1df7a86bb0f2d64ed969991
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue May 19 19:04:33 2020 +0530
+
+    Add OVAL parser and tests for SUSE
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 736a9b28f7c10383b84349360750e45d2a08c1e4
+Merge: b6725ab 1490508
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue May 19 13:39:30 2020 +0200
+
+    Merge pull request #179 from sbs2001/ubuntu_oval_parser
+    
+     Add OVAL parser for Ubuntu
+
+commit 1490508414020f2e66a1aceaeefa5d5628753daa
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon May 18 21:05:55 2020 +0530
+
+    Replace OvalElement with Optional[OvalElement] as type annotatation in oval_parser.py's getElementById method, also improve OvalExtractor's get_data method by checking for mathing_tests earlier
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 88dcb9c9e7dabd252596982a311d5920283ad574
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon May 18 20:58:11 2020 +0530
+
+    Add license and terms of usage to lib_oval.py header
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 0f5de5587e25a25fbe040fe9f4ad4d340b33a036
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat May 16 17:21:34 2020 +0530
+
+    Tweak get_tests_of_definition method
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f4405dbcfd5709c2168d48a511eb2af323279b10
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat May 16 16:46:51 2020 +0530
+
+    Add and use PerformantOvalDocument in the Oval parser to increase performance
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 44a8843259c87b695a485a023d255f7e03a37e79
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat May 16 14:51:38 2020 +0530
+
+    Capture URLs in get_data method and update tests and doc strings
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 1a0ba3d08441c734d545a8cf60969c247d8e9a0a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat May 16 14:24:46 2020 +0530
+
+    Added a method to obtain all urls nested within a definition
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit fa531a652fc680a7c9a82688418d593d1db5f627
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri May 15 19:58:32 2020 +0530
+
+    Modify the style check to ignore the oval parser test and  lib_oval.py
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 30c813a09686281a641d03ed710b683ec4b75d2d
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri May 15 19:57:10 2020 +0530
+
+    Add test and a test oval file for the oval parser
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 5cbe40533529344b911c76106f7bfa609166dbdd
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri May 15 19:55:27 2020 +0530
+
+    Add oval parser
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit b6725ab3f4ed447f37e63c68d5419a54d49fb5ce
+Merge: 7d8d687 24a61c8
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed May 6 19:06:59 2020 +0200
+
+    Merge pull request #177 from sbs2001/rm_circl
+    
+    Remove api calls to circl api
+
+commit 24a61c825c5e5acf41a988aa4d8559a63c3fa009
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 6 20:39:39 2020 +0530
+
+    Remove tests for api_data
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 204cc11058536c2620b2592342604a1ac5d2ac8a
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed May 6 20:35:49 2020 +0530
+
+    Remove circl api calls
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 7d8d6872aa123d7f6bcb996e7e23d546e225bada
+Merge: 2e90168 88f1c74
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri May 1 16:31:28 2020 +0200
+
+    Merge pull request #176 from sbs2001/update-requirements
+    
+    Remove unrequired dependencies
+
+commit 2e90168c92016d8ceedd92b75262c69318796c4e
+Merge: 37b1eda 9c3c7a7
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri May 1 16:30:08 2020 +0200
+
+    Merge pull request #174 from sbs2001/schema-validation
+    
+    Add schema validator for Alpine linux
+
+commit 88f1c74d5c5c010ffe411f588da59a9e3ef6b8d0
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Apr 27 08:52:38 2020 +0530
+
+    Remove unrequired dependencies
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 9c3c7a7e07dc5043ffc6da8ad599209909fecfe8
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Apr 20 19:41:52 2020 +0530
+
+    Add schema validator for Alpine linux
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 37b1eda456099db2acc5a96496d258b58f9f2b00
+Merge: 7b62763 1052f02
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Apr 16 18:10:16 2020 +0200
+
+    Merge pull request #172 from sbs2001/schema-validation
+    
+    Add schema validators for debian, archlinux importers
+
+commit 1052f0254336f5632cedacfc513f81fe224301d9
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Apr 13 16:27:20 2020 +0530
+
+    Add schema validation for archlinux importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 58aeb83594a659f0d3b9a5f72ae4cd584f375a72
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Apr 13 16:26:49 2020 +0530
+
+    Add schema validation for debian importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 7b62763c2d7cb3be1943ae1c4e4a7b6536d7c7d9
+Merge: 00e715a bd28137
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Apr 11 16:39:46 2020 +0200
+
+    Merge pull request #171 from sbs2001/schema-validation
+    
+    Add schema validation for safety_db importer
+
+commit bd28137b94e44e685d8be42cd611a471009445fe
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Apr 10 17:39:54 2020 +0530
+
+    Add schema validation for safety_db importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 00e715acf6590af47f9866fd3d5ad899ac16a657
+Merge: 4d7a256 f590492
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Apr 7 15:06:22 2020 +0200
+
+    Merge pull request #167 from sbs2001/develop
+    
+    Add alpine linux importer
+
+commit f59049257a08dc36caf04d5918ad6b58e2caedab
+Merge: c0726b2 4d7a256
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Apr 7 14:05:14 2020 +0530
+
+    Merge branch 'develop' into develop
+
+commit c0726b243f20e3a4539bbcddafb6ef8831e20e28
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Apr 5 13:00:32 2020 +0530
+
+    Fix bugs in alpine linux importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 4d7a25653fdfec3d40ac8cb3c19f693fd7344a30
+Merge: 4c952ad 7b578db
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Apr 4 18:30:32 2020 +0200
+
+    Merge pull request #170 from sbs2001/safetydb
+    
+    Fix safetydb
+
+commit 7b578db3516229345cc578d9efaca51b1ce2b843
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Apr 4 20:06:43 2020 +0530
+
+    Correct the cli
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit f82855c1bd736fa8130ae813aaf04aa1d7cd9913
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Apr 4 19:46:17 2020 +0530
+
+    Remove unused import from ruby importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3e38b3a03d8902f873177ef81b40692dd8cb1fc2
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sat Apr 4 19:45:32 2020 +0530
+
+    Fix safetydb importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 3ab44858a0e3d5178d2b6c8baeeaf6708ab7ecdf
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Apr 1 18:14:27 2020 +0530
+
+    Add type='alpine' for alpine sec importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 2cfd3ebaac5749d145c8aea9239902d97c23f9c5
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Mar 24 08:04:14 2020 +0530
+
+    Add alpine linux scraper
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 4c952ad03d3c72543f1bc8ad36567ba7519300bc
+Merge: c5c69a4 c97975a
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sun Mar 22 22:01:32 2020 +0100
+
+    Merge pull request #166 from sbs2001/develop
+    
+    Allow skipping internet dependent tests, fix npm dump
+
+commit c97975a00d274efb045c14cd7b0b945c7cb72b53
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Mar 20 15:36:48 2020 +0530
+
+    Add type ='npm' for unaffected packages in npm dump
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 922bf0307d25781af81e21eef87b7f2dee9ba8d4
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Wed Mar 18 11:20:19 2020 +0530
+
+    Add pytest markers to give option to skip tests dependent on internet connection
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit c5c69a46f2476056158cfb87bdc304baabba5eba
+Merge: 80a7b6e bf31b16
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sun Mar 15 18:05:31 2020 +0100
+
+    Merge pull request #163 from sbs2001/fix-npm
+    
+    Fix npm importer
+
+commit bf31b165489c7c0ca6ac7a99dff22679b036eb58
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Mar 15 20:45:49 2020 +0530
+
+    Improve empty list conditionals
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit fa77c7c7c2637ff160931bb113b61fe7fcc83eaf
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Mar 15 20:16:46 2020 +0530
+
+    Style corrections
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 63a17896fc1f2f101228f408c4e107e6f48f2c27
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Sun Mar 15 20:08:26 2020 +0530
+
+    Added more specific exceptions
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 80a7b6e50c37dc599f28351f3e132e8bacbc551f
+Merge: 39df9ea 5781a78
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Mar 14 14:04:16 2020 +0100
+
+    Merge pull request #161 from EslamHiko/rust-test
+    
+    Test: add tests for rust scraper
+
+commit 39df9ea0c0c93b7da8d8a76a51f2054ea82be9a8
+Merge: 193e953 043bc1c
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Mar 14 13:55:07 2020 +0100
+
+    Merge pull request #153 from sbs2001/develop
+    
+    Add  importer for Python safetydb
+
+commit 42c789b9f007179514ec84d0be66510a1b05038d
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Mar 13 19:01:26 2020 +0530
+
+    Style correction
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 30210f3d7e46376c2961030ef678eb5f73442257
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Fri Mar 13 18:54:06 2020 +0530
+
+    Made npm importer working again , done  some refactoring
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 5781a7873ca63584a0f888e274b20cbb53631093
+Author: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+Date:   Thu Mar 12 17:57:10 2020 +0200
+
+    test: fix lint errors
+    
+    Signed-off-by: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+
+commit 988a91ad40b31124628ff3db1dee4ec2755f0810
+Author: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+Date:   Thu Mar 12 17:51:24 2020 +0200
+
+    test: add tests for rust scraper
+    
+    Signed-off-by: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+
+commit 043bc1cbb6c8bc12e5c4996028810509be6d006b
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Mar 9 03:13:17 2020 +0000
+
+    More changes to safety_db
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit a72a592925ef7513c080548d0e297131684cdf21
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Mon Mar 9 08:13:49 2020 +0530
+
+    Make suggested  changes to safety_db importer
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 193e953b846503a49ce23d382a7f319f69d07736
+Merge: 848ee12 633ef69
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Mar 5 14:42:38 2020 +0100
+
+    Merge pull request #155 from EslamHiko/fix-key-error
+    
+    fix: check for 'patched_versions' key
+
+commit 633ef69ba5b5c23cbfed0c63a72845b04b6b9da3
+Author: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+Date:   Thu Mar 5 15:21:42 2020 +0200
+
+    fix: fix CI
+    
+    Signed-off-by: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+
+commit 1f8e5241a9feb8e2ec8305e78d48857036bd5405
+Author: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+Date:   Thu Mar 5 15:18:03 2020 +0200
+
+    fix: update rust Schema
+    
+    Signed-off-by: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+
+commit f323d3409cc04d6784febaaeb137ef97f46c5214
+Author: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+Date:   Thu Mar 5 14:12:29 2020 +0200
+
+    fix: fix CI error
+    
+    Signed-off-by: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+
+commit 612c3bd2caded37707ea21f87ad8f22fc0c7fc25
+Author: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+Date:   Thu Mar 5 13:59:48 2020 +0200
+
+    fix: check for 'patched_versions' key
+    
+    Signed-off-by: Islam ElHakmi <eslam.elhakmey3@gmail.com>
+
+commit 49253641e93fe684110fb46db3ac94cad5f0a084
+Author: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+Date:   Tue Mar 3 15:59:49 2020 +0530
+
+    Add  importer for safetydb
+    
+    Signed-off-by: Shivam Sandbhor <shivam.sandbhor@gmail.com>
+
+commit 848ee1285f8c6bdbc1245e59eb788b405cbe2088
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Feb 15 19:04:26 2020 +0100
+
+    Fix resource leak in NPM importer
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit dc318c3f942f2efdfab8c0ff89abb5f39e5f89b6
+Merge: 99b4191 6d8ed83
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Feb 15 18:59:20 2020 +0100
+
+    Merge pull request #148 from sbs2001/add-importer
+    
+    Add rust security importer
+
+commit 6d8ed831522cde4894c4efef0b6823503c91b21e
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Wed Feb 12 18:25:57 2020 +0530
+
+    Use 'with' handler for  urlopen() and fix other nits
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit 1551e315971604543bd86013a271e6a57c15190c
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Mon Feb 10 21:54:13 2020 +0530
+
+    Upgrade requirements
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit 3ccef77221cfc75614dd01fb7e911cf8f06b2a1a
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Mon Feb 10 21:49:36 2020 +0530
+
+    Add rust security  advisories
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit 99b4191df5ae6cb11bbedd8ba590e89f41ca3f55
+Merge: 3357865 700a469
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Feb 8 15:07:07 2020 +0100
+
+    Merge pull request #147 from haikoschol/add-fixtures
+    
+    Remove dependency on importers from API tests
+
+commit 700a4698c74846e83cd18aab46c78a5852f387f6
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Feb 8 14:49:52 2020 +0100
+
+    Remove dependency on importers from API tests
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 335786522f334cc83b999532b3e39606c86ea541
+Merge: 46e4d63 504b2ff
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Feb 8 14:26:51 2020 +0100
+
+    Merge pull request #146 from haikoschol/upgrade-django
+    
+    Upgrade to Django 3
+
+commit 504b2ffb9afa6c8f760bc5fbb3c07315831b8fda
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Feb 8 14:24:20 2020 +0100
+
+    Upgrade to Django 3
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 46e4d63c883bf65b51d5f970712af5ad6552e031
+Merge: 7426253 a1e5726
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sun Jan 26 18:34:27 2020 +0100
+
+    Merge pull request #143 from sbs2001/develop
+    
+    Add ruby gems advisory importer
+
+commit a1e572673bedd39974f04f3d1a728333a28a8a62
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Sun Jan 26 22:55:23 2020 +0530
+
+    Unskip CVE affecting multiple packages
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit 4ab3633abca33f18c49494ca0292e16bbe3f92aa
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Sat Jan 25 19:01:10 2020 +0530
+
+    Add ruby importer and its tests
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit 742625312ea393341cc5e1bb0e8c6f93d4706d59
+Merge: 0fd50a2 7cd63fa
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sun Dec 22 15:06:01 2019 +0100
+
+    Merge pull request #138 from sbs2001/exp
+
+commit 7cd63fa042e2c5e588f947676449c86625b63c0c
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Sat Dec 21 18:56:49 2019 +0530
+
+    Fix npm.py bug
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit 0fd50a217489e5ee7f6d40513b8b2e89d805df11
+Merge: d974065 1abf16a
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri Dec 20 11:29:53 2019 +0100
+
+    Merge pull request #137 from sbs2001/develop
+
+commit 1abf16a904cf069ec189d503b979c2fbb3e685c1
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Fri Dec 20 11:46:21 2019 +0530
+
+    Fixes typo in Django admin
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit d974065f6dcef329bc15249db68b6948de059ec4
+Merge: 7289228 61ba0a0
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Dec 19 17:47:12 2019 +0100
+
+    Merge pull request #135 from sbs2001/develop
+    
+    Update README instructions for running tests
+
+commit 61ba0a098e9ef10d0794ee8e09addf263b38995c
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Thu Dec 19 22:09:30 2019 +0530
+
+    Update instructions for running tests
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit 7289228368abbd8ca67578730682741d639f37dc
+Merge: 196b80c c376e75
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Dec 19 17:00:46 2019 +0100
+
+    Merge pull request #134 from haikoschol/whitenoise-warnings
+    
+    Stop WhiteNoise from emitting warnings during test runs
+
+commit c376e7523295b5594d30c8d212e157ed5a2d92a9
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Dec 19 16:47:24 2019 +0100
+
+    Enable WhiteNoise autorefresh in "dev mode"
+    
+    This stops warnings about STATIC_ROOT missing.
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 78edaeab6cca1c4483ae52128e7a3fba1fb8bda7
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Dec 19 16:32:13 2019 +0100
+
+    Run collectstatic before the tests in CI
+    
+    This stops WhiteNoise from emitting warnings about STATIC_ROOT not
+    existing.
+    The alternative would be to set WHITENOISE_AUTOREFRESH = True in the
+    settings. We currently don't have any settings that are only applied
+    in CI and I think it makes sense to keep it that way to have the test
+    environment as close to production as possible.
+    
+    See https://github.com/evansd/whitenoise/issues/191
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 196b80c2d6c7b7ef3e17445656983ce28b95036c
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Dec 19 13:38:48 2019 +0100
+
+    Align with naming changes in django-filter
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 9909f7e9db747ba79f8c45ce8584edc4f6a64306
+Merge: f55d2fb 8072382
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Dec 19 10:41:12 2019 +0100
+
+    Merge pull request #133 from sbs2001/develop
+    
+    Change Django  Tests to pytests
+
+commit 8072382adb6c0b29c6fce6ecdabe19c19833259b
+Author: sbs2001 <shivam.sandbhor@gmail.com>
+Date:   Sat Dec 14 22:21:14 2019 +0530
+
+    Change Django tests to pytests
+    
+    Signed-off-by: sbs2001 <shivam.sandbhor@gmail.com>
+
+commit f55d2fbe6d494f23efe3313e23a3355336d5d757
+Merge: 2612199 110c2ca
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Dec 9 15:15:20 2019 +0100
+
+    Merge pull request #131 from nexB/npm-issue
+    
+    Fixes the NPM import
+
+commit 110c2ca7d273c2bfdf678316913f104002bc6178
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Dec 9 15:03:39 2019 +0100
+
+    Fix buggy list manipulation
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit a546d429d4e3856959d183429d7c5055e386cd9e
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Fri Dec 6 22:21:43 2019 +0100
+
+    Add missing variable name.
+    
+    Signed-off-by: Philippe Ombredanne <pombredanne@nexb.com>
+
+commit 26121992619f942f2ec4160ea5b6d2d97af8a2fd
+Merge: 96574e3 b34e6c6
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Fri Dec 6 20:06:55 2019 +0100
+
+    Merge remote-tracking branch 'origin/master' into develop
+
+commit 96574e395be2796a49d45a8c26210fd3672a0b97
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri Dec 6 17:09:16 2019 +0100
+
+    Upgrade psycopg2 for Python 3.8 support
+    
+    See https://github.com/psycopg/psycopg2/issues/854
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit b6b607697243ed87274823d87d5d47ab0a72ea74
+Merge: 9a1f74e 533675a
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri Dec 6 09:52:50 2019 +0100
+
+    Merge pull request #130 from nexB/dependabot/pip/django-2.2.8
+    
+    Bump django from 2.2.4 to 2.2.8
+
+commit 533675ae52740f2356e0f4f39eeab9c53732c327
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Wed Dec 4 21:37:09 2019 +0000
+
+    Bump django from 2.2.4 to 2.2.8
+    
+    Bumps [django](https://github.com/django/django) from 2.2.4 to 2.2.8.
+    - [Release notes](https://github.com/django/django/releases)
+    - [Commits](https://github.com/django/django/compare/2.2.4...2.2.8)
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit b34e6c6a3afaea695164f6a6bef2ee2bb50d8352
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Dec 3 13:03:33 2019 +0100
+
+    Add Apache 2.0 LICENSE file
+    
+    fixes #115
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit aa1cdcb7f3c10eabe102f4ddb6f4c13d737d537f
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Dec 3 12:31:11 2019 +0100
+
+    Add license header
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 9a1f74efc270575bd0fc44f48988842535d25976
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Dec 3 13:03:33 2019 +0100
+
+    Add Apache 2.0 LICENSE file
+    
+    fixes #115
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 941eea1d319f9966e44f316b53712e0bc3364823
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Dec 3 12:31:11 2019 +0100
+
+    Add license header
+
+commit 6f08acecf7cad8aa8fa5443cf30bbf244900c966
+Merge: 58e3ff3 5c9493d
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Sun Nov 10 12:19:58 2019 +0100
+
+    Merge pull request #125 from haikoschol/arch-import-fixes
+    
+    Add unique CVE ID field to Vulnerability
+
+commit 5c9493db2650f3db0beb45ad0c1b77f7ab64c880
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Nov 2 00:14:52 2019 +0100
+
+    Add unique CVE ID field to Vulnerability
+    
+    This change adds the field cve_id to the Vulnerability model and based
+    on that, improves the data import for Arch Linux.
+    
+    The improvements made have been discussed in issue #20:
+    
+    - For each CVE in a given AVG, exactly one Vulnerability is stored
+    
+    - For each CVE, one VulnerabilityReference to its page on
+      security.archlinux.org is stored
+    
+    - Each ASA mentioned in an AVG is stored as a VulnerabilityReference
+    
+    Since there is no production deployment of vulnerablecode yet, I took
+    the opportunity of changing the models to remove all migrations and
+    create a new one that creates the whole schema.
+    
+    Since the cve_id field on Vulnerability has a unique constraint set, I
+    needed to make some changes to the import code that belong to issue #28.
+    I kept them minimal however so #28 is still open and needs to be
+    addressed later.
+    
+    closes #20
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 58e3ff375f8cc40cd457aa8130a5ac5264e29cd7
+Author: Navonil Das <navneeladas@gmail.com>
+Date:   Fri Nov 1 18:35:40 2019 +0530
+
+    Collect NPM
+    
+    closes #101
+    
+    Signed-off-by: Navonil Das <navneeladas@gmail.com>
+
+commit f56b6042b3e65dbc9a0f9fca49b861ec3f69c8e4
+Merge: 8185bdb 4d1c676
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Oct 26 16:34:39 2019 +0200
+
+    Merge pull request #124 from haikoschol/docs-periodic-update
+    
+    Document methods for periodic data  import
+
+commit 4d1c676c796055570c2c911f105b36dbeb98d839
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Sat Oct 26 16:25:47 2019 +0200
+
+    Document running periodic data import on Heroku
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit b8bdbb4ad34e2d5f8f4858d9f7f6814b1883ba48
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed Oct 23 17:23:58 2019 +0200
+
+    Document running periodic data import with systemd
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 8185bdbf5b6c2a182e566bb80690fe482fc415e7
+Merge: af561ae b8548b5
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed Oct 2 15:15:29 2019 +0000
+
+    Merge pull request #114 from haikoschol/packageurl
+    
+    Use Package URL for packages
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit b8548b56e039e69616bd7fc77246fc0156963497
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Oct 1 13:11:13 2019 +0100
+
+    Allow querying /api/packages by Package URL
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 0ce2512378ef74d4819ebfd5db3d9c78ba135f92
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Sep 30 16:06:59 2019 +0100
+
+    Include Package URL in API response
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit b018e5a364c8d7e6e9b228ef97353d481fd95fa9
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Sep 30 16:05:34 2019 +0100
+
+    Follow naming convention for class methods
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit ef4e8468f39bc833b7d0ce1a46835cf4de60460d
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri Sep 27 17:05:13 2019 +0100
+
+    Store Package URL data in the Package model
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit af561ae7c0bf70cd91b8948af7610711d494eeeb
+Merge: d5ab2fe 905a899
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Thu Sep 26 08:29:37 2019 +0200
+
+    Merge pull request #60 from haikoschol/import-considers-status
+    
+    Debian import considers status
+
+commit 905a899776fc5909b38b6ff174ce6f82cbcc3fc2
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Sep 24 17:29:52 2019 +0100
+
+    Consider "status" field in Debian data import
+    
+    Currently only two status values are recognized:
+    "open" maps to ImpactedPackage
+    "resolved" maps to ResolvedPackage
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit de031114eaa1eae4a7b3467a895e4060fa135ebc
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Sep 24 13:19:00 2019 +0100
+
+    Include tests in pycodestyle check
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit ec9abb63b1109c64da4cb50c9b16560c0626da84
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Sep 24 13:16:02 2019 +0100
+
+    Split up data dump tests into separate classes and methods
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 0e119b0ec30f85081b0fbb5125848e8633156f80
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Sep 23 17:30:24 2019 +0100
+
+    Include "version" attribute in debian.extract_vulnerabilities()
+    
+    Before this change, only "fixed_version" was retained. This is
+    the lowest version of the package that includes a fix for the
+    given vulnerability. However in the meantime, newer versions
+    of the package might have become available in the Debian release
+    passed in as "base_release".
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 97d2491492800168627d29154f071205450f5463
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Sep 23 16:21:04 2019 +0100
+
+    Replace test data for Debian security tracker
+    
+    The previous fixture had some strange values like "not-resolved"
+    for "status" and "un-remote" for "scope". It doesn't look like
+    those values are used by the Debian security tracker.
+    To address issue #38 we need records with "status" values
+    "resolved" and "open".
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit d5ab2fe053677fe5e1ecc62f0c307cd8c777ddd7
+Merge: 42f4668 ec81273
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Mon Sep 23 10:04:38 2019 +0200
+
+    Merge pull request #57 from haikoschol/import-cli
+    
+    Provide CLI for data import
+
+commit ec81273dbf8b6fc6936061b4a6a8ed799f91c1c3
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed Sep 18 17:26:06 2019 +0200
+
+    Provide CLI for data import
+    
+    This change implements the custom management command "import" that allows
+    
+    - listing all available data sources
+    - importing data from one or more sources by name (e.g. "debian")
+    - importing data from all sources
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 42f4668aacc01c39765f88c66d68e430b868bc6a
+Merge: 778ac01 202006a
+Author: Uday Korlimarla <44824134+udaykor@users.noreply.github.com>
+Date:   Wed Sep 18 14:41:36 2019 +1000
+
+    Merge pull request #53 from haikoschol/secret-key
+    
+    Remove hard-coded SECRET_KEY from production settings
+
+commit 778ac016a608643c00eb864eb797dd134d3c13a3
+Merge: 1dfae11 ec15085
+Author: Uday Korlimarla <44824134+udaykor@users.noreply.github.com>
+Date:   Wed Sep 18 14:33:11 2019 +1000
+
+    Merge pull request #52 from haikoschol/improve-readme
+
+commit 202006a34b747ee70514a9a2491e63babf3deb0b
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Mon Sep 16 16:18:16 2019 +0200
+
+    Remove hard-coded SECRET_KEY from production settings
+    
+    This change moves the hard-coded key to vulnerablecode/dev.py for
+    use during development (e.g. DJANGO_DEV is set).
+    
+    Otherwise the key is read from an environment variable with the
+    same name. The advantage of this approach over using a gitignored
+    file containing the secret is that it works with deployment
+    environments that use ephemeral filesystems, such as Heroku.
+    
+    closes #46
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit ec1508599547e82977572d2d1d7ac1eec816ddb8
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Fri Sep 13 17:15:44 2019 +0200
+
+    Improve setup instructions in README
+    
+    - Fix instructions for Debian-based distros
+    - Add instructions for running Postgres in Docker
+    - Set DJANGO_DEV=1 in runserver call to have localhost in
+    - ALLOWED_HOSTS
+    
+    closes #47
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+
+commit 1dfae11f9dbb1db584a225d5760527c3acd2c435
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Wed Sep 11 14:57:49 2019 +0200
+
+    Upgrade pycodestyle to avoid FutureWarning on Python 3.7
+
+commit 27e4b060deb905573bec6e303ef72529a8581d06
+Merge: 7343bde c9aa25b
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Thu Aug 22 12:20:20 2019 +0200
+
+    Merge pull request #51 from haikoschol/update-django
+    
+    Update Django version
+
+commit c9aa25bf65395a59302fafface69d32a94d3508b
+Author: Haiko Schol <hs@haikoschol.com>
+Date:   Tue Aug 20 00:33:25 2019 +0200
+
+    Update Django version
+    
+    Signed-off-by: Haiko Schol <hs@haikoschol.com>
+    
+    Fixes #50
+
+commit 7343bde30124a72ba760a7d98760cf2d3ab9543a
+Merge: 5895b36 43a35ce
+Author: Philippe Ombredanne <pombredanne@gmail.com>
+Date:   Thu Apr 11 23:05:10 2019 +0200
+
+    Merge pull request #33 from lohani2280/test_branch_1
+    
+    Collect vulnerabilities from archlinux
+    
+    Signed-off-by: Philippe Ombredanne <pombredanne@nexb.com>
+
+commit 43a35ce70f0e05154a4b6f6a5a4e38969b3fac08
+Author: lohani2280 <lohani.ayush01@gmail.com>
+Date:   Thu Apr 11 22:17:35 2019 +0530
+
+    Update README on how to add archlinux data into the database.
+    
+    Signed-off-by: lohani2280 <lohani.ayush01@gmail.com>
+
+commit ca646245f990ee9d686f1b3d637cebfa52fcef4b
+Author: lohani2280 <lohani.ayush01@gmail.com>
+Date:   Wed Apr 10 03:02:30 2019 +0530
+
+    Fix tests
+    
+    Signed-off-by: lohani2280 <lohani.ayush01@gmail.com>
+
+commit 0f124c1404724306608dec0b9cb7d40deb72a1a4
+Author: lohani2280 <lohani.ayush01@gmail.com>
+Date:   Thu Feb 28 07:22:26 2019 +0530
+
+    Collect vulnerabilities from arch linux https://github.com/nexB/vulnerablecode/issues/20
+    
+    Signed-off-by: lohani2280 <lohani.ayush01@gmail.com>
+
+commit 5895b362e6b752225ffb591e775cdc34bf66140b
+Merge: 84af416 84d9249
+Author: Philippe Ombredanne <pombredanne@gmail.com>
+Date:   Wed Apr 10 16:42:52 2019 +0200
+
+    Merge pull request #45 from nexB/add-admin
+    
+    Add admin
+    
+    Signed-off-by: Philippe Ombredanne <pombredanne@nexb.com>
+
+commit 84d92494dbc142883e0def3672d46f61da506987
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Mon Apr 8 23:24:16 2019 +0530
+
+    Use path instead of re_path
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit 73cf455c7125c561215c122d9b563044ee006490
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Mon Apr 8 00:32:29 2019 +0530
+
+    Add basic admin to see the files being added
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit 5bb662996f579e2e1e64a75b4f1aaf921d25cb41
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Mon Apr 8 00:12:06 2019 +0530
+
+    Add admin
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit 84af41668639f1b748a7c4c2e8f1aecee33db056
+Merge: 55a633d 4424ad2
+Author: Philippe Ombredanne <pombredanne@gmail.com>
+Date:   Sat Apr 6 13:48:02 2019 +0200
+
+    Merge pull request #42 from nexB/bump-versions
+    
+    * Bump dependency versions
+    * Update README with latest code and add postgresql as a dependency
+    * Remove DJANGO_DEV env from travis CI
+    * Add travis environment variable check in settings
+    * Fix tests
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+    Signed-off-by: Philippe Ombredanne <pombredanne@nexb.com>
+
+commit 4424ad2cd9deabc465274c260aaad6ce9ef3f738
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Sat Apr 6 16:55:25 2019 +0530
+
+    Makes review changes
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit 38c6b88226371d0a6d46d271865917cfc3e685eb
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Sat Apr 6 15:23:03 2019 +0530
+
+    Fix tests
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit 46bf7e3166dc5a65e6a4c9dd4726e5ebf3d60271
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Sat Apr 6 15:11:52 2019 +0530
+
+    Add travis environment variable check in settings
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit 1de678ad9f5142ccae99db749d17f5137b8b4f89
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Sat Apr 6 15:05:24 2019 +0530
+
+    Remove DJANGO_DEV env from travis CI
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit bd6477c95d43c73aa1ec5e9e45280f912470b4c0
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Sat Apr 6 15:02:14 2019 +0530
+
+    Update README with latest code and add postgresql as a dependency
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit ebf553cb5c2ea3be54fb3d44c19793c33d25c221
+Author: Ranvir Singh <ranvir.singh1114@gmail.com>
+Date:   Sat Apr 6 14:12:07 2019 +0530
+
+    Bump versions
+    
+    Signed-off-by: Ranvir Singh <ranvir.singh1114@gmail.com>
+
+commit 55a633db3c09d8b78d21bffea25a510e1444acdf
+Merge: 8b17fe3 5599d44
+Author: tdruez <tdruez@users.noreply.github.com>
+Date:   Fri Nov 17 11:01:20 2017 +0800
+
+    Merge pull request #31 from nexB/30-api-improvements
+    
+    30 api improvements
+
+commit 5599d4467e790585214cf45f0eb54d62ed8ec9ea
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Mon Oct 9 19:55:34 2017 -0300
+
+    Refine the api view into a PackageViewSet #30
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit b9f6ca3f839eb1316e44c45382538ea1b5e0e321
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Mon Oct 9 18:05:09 2017 -0300
+
+    Upgrade multiple dependencies to latest versions #30
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 8b17fe368840670c0efee507cc6f2f3594e733d7
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Fri Sep 22 18:51:18 2017 -0300
+
+    Add PackageReference as a `references` field on the PackageSerializer #30
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit d6b7eb14fa93a2a2e60d57d1c8883055a2295c39
+Merge: fa2d442 7048c43
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Fri Sep 22 17:33:20 2017 -0300
+
+    Merge branch 'develop' into heroku
+
+commit 7048c432ae8bcde33e215c3b8f6954b2a4bb2d6b
+Merge: 95f725f 2c5f78d
+Author: tdruez <tdruez@users.noreply.github.com>
+Date:   Fri Sep 22 17:30:55 2017 -0300
+
+    Merge pull request #26 from nexB/json_api
+    
+    JSON API #8
+
+commit 2c5f78da9ba59fa7cd179e86532518612efc5bc4
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Fri Sep 22 16:26:12 2017 -0300
+
+    Add a `vulnerabilities` m2m field on the Package model
+    
+    Set the new 2m field on the PackageSerializer
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 2d6d5eb8683ccdf360817684b8af8f1b7b2b219e
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Sep 22 22:56:51 2017 +0530
+
+    Update tests according to changes #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit c42a7753a518853ac2551cf055e471f6df4667e2
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Sep 22 22:55:58 2017 +0530
+
+    Included platform in package serializer #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit a860befc8ddcd83163c02cb4baed54a0ebd587ca
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Sep 22 22:54:56 2017 +0530
+
+    Update URL regex #8
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit fa2d442c70e97a9d740eee66462eb006c45e66db
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 21 11:42:49 2017 -0300
+
+    Add missing blank line
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 8856252a282555f31e6b8331cbb8d9958feb6299
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 21 11:40:07 2017 -0300
+
+    Add a dev settings for local dev and CI
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit c9b155aaac25600a3f351c2b7c2a2397a21c2d05
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 21 10:56:34 2017 -0300
+
+    Restore working static settings
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit a7478bdc4dcb4f4356eb0cb32b592095a87957e4
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 21 10:53:46 2017 -0300
+
+    Refine the DATABASE settings to use a proper postgresql instance
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit eabe3590270bc09a26db9831e94cac1b4807ca4e
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 21 09:47:09 2017 -0300
+
+    Add Heroku URL in the ALLOWED_HOSTS
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit da1e819c7bc2f4c2cfa958c0784f546494435dee
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 21 09:38:47 2017 -0300
+
+    Fix the app name in the Procfile and add entries in the README
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 0878f3087ee03c8657f02954097afb8d9e5b9663
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 21 09:23:45 2017 -0300
+
+    Add base configuration for a deployment on Heroku
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 23fc544e8f5fda1d653454b993b2b26cc49a007c
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Wed Sep 20 21:41:11 2017 -0300
+
+    Add back Gitter webhooks removed by mistake
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit b0168779d70001f20bc9221b2dca58b61c201002
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Wed Sep 20 21:34:50 2017 -0300
+
+    Fix failing tests following codebase structure changes
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 86c359a3e579d1cb1c643ca4a65df9d6160fb6e5
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Wed Sep 20 19:51:14 2017 -0300
+
+    Refactor the codebase structure
+    
+    - Following Django best-practices
+    - Simplify the layout
+    - Use proper naming convention
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 16ea31ad22b32eeb577690c31774a3da0c8d7274
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Tue Sep 12 22:26:56 2017 +0530
+
+    Update readme for API instructions #8
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 5d5f0899d7f9c0a22023bf17bccf9429e234a827
+Merge: 9b277d6 0bf6354
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Sep 12 10:15:38 2017 +0530
+
+    Merge branch 'json_api' of https://github.com/nexB/vulnerablecode into json_api
+
+commit 9b277d6e621b57e1e46157ac5d4c3282f75960c4
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Sep 12 10:15:16 2017 +0530
+
+    Update tests according to changed api url #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 0bf63542bbfa8369fa95d014b5d14322954c019a
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Tue Sep 12 10:12:36 2017 +0530
+
+    Update travis according to new dir structure
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 5469f990a91a6aac893b83a209fe878527f4e678
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Sep 12 10:04:26 2017 +0530
+
+    change API url to api/ from data/ #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit d533162869348313d156ddb89c1a3be077a5371b
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Sep 12 10:03:27 2017 +0530
+
+    Re-order serializers according to models #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 0317f8abd6d0a5c199ac529ccdd4432a6e9255b1
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Sep 12 10:02:19 2017 +0530
+
+    Move tests to vulncode_app/tests #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 8158a84e0b000cdc14625261f13a757496e2884e
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Sep 7 18:22:17 2017 -0300
+
+    Add missing migration file along some code cleanup #8
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit d1821c44a676405e57c997551c2d8754ead0ccb6
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Aug 25 15:44:09 2017 +0530
+
+    Update unique together #8
+    
+    * add url in vulnerability reference unique together
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 42c7be2d23d5f020693efab6232998b2dac3cfa6
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Aug 25 15:34:04 2017 +0530
+
+    Add test cases #8
+    * test blank response
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit bdcb807f69feda32e58255766931b8d7bd44646c
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 24 14:07:13 2017 +0530
+
+    Minor formatting changes #8
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 9015a68de79de1ca50250d26eaacceec7524ee14
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 24 14:06:25 2017 +0530
+
+    Update models #8
+    * remove M2M on package
+    * rename package_fk to package
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit d41215ddafdcb28e4d61adeb5b880024dbf5af87
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 24 13:39:58 2017 +0530
+
+    New migrations #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit fcadb1777ccd1266302b6eaf7cbb0b49b6e500e5
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 24 12:42:06 2017 +0530
+
+    Add test cases #8
+    * sort imports
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 692d72d3c7448eef3dd0c464e9436c328e227b99
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Aug 23 07:31:24 2017 +0530
+
+    Remove un-used imports #8
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit f08d614bb30e53164ef0c45eeda6c136de5eece2
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Aug 23 07:30:47 2017 +0530
+
+    Add many to many field on Package #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 0705c24d8b5a0f34a937c21e96c3109b9cbe5550
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Aug 23 07:29:32 2017 +0530
+
+    Updated serialization logic
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 96d6bfd3a32cdee7edd4a700a7f5de7c9fe712c2
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 22 17:28:36 2017 +0530
+
+    Add test cases and change data output format #8
+    * use dict instead of sets in data output
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 37d16b2bfd604bc491eb416580db8a615d5e9d17
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Aug 21 06:33:32 2017 +0530
+
+    Change API data format to as discussed #8
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 585327ad356dd8c0e6dbc32fb6b363a91a3769fc
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Aug 21 02:32:13 2017 +0530
+
+    Change data output format #8
+    * use natural impactpackage link
+    * add impact package link in data_dump
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 4d1c6c1cf57518af72a01cc6f2df18afb2645ce4
+Merge: c75ae67 89f2bb1
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 15 04:07:06 2017 +0530
+
+    Merge branch 'json_api' of https://github.com/nexB/vulnerablecode into json_api
+
+commit c75ae67ffa676c07d41530bc0205b9ba8c237252
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 15 04:06:42 2017 +0530
+
+    Remove un-used imports #8
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 89f2bb14e359702ea0b6f076d4927449fe2b6f1e
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Tue Aug 15 04:04:43 2017 +0530
+
+    Add DRF to requirements.txt
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit bfa5bc7b12ddd3da4c50cdcddc1a1b2b3ad7b674
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 15 03:56:39 2017 +0530
+
+    Add serializers based on models #8
+    * updated views
+    * updated urls.py
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 95f725fa60ba45e17759758c3f815c8403b461ff
+Merge: 404c203 1716de9
+Author: tdruez <tdruez@users.noreply.github.com>
+Date:   Tue Aug 8 13:55:46 2017 +0200
+
+    Merge pull request #25 from nexB/data_dump
+    
+    Scrapes data from scrapers and dump in the database
+
+commit 1716de9e9c067a91056f00be3cd1499cde289bfa
+Merge: efedb24 20ee1f9
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 8 17:04:18 2017 +0530
+
+    Merge branch 'data_dump' of https://github.com/nexB/vulnerablecode into data_dump
+
+commit efedb24d41bc483b9948997f2e4fa0ac2ee1cb13
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 8 17:01:50 2017 +0530
+
+    Convert double quotes to single quotes #24
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 20ee1f93c40f7609d396c6e26ff18cb31bacda9a
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Tue Aug 8 16:53:03 2017 +0530
+
+    Remove makemigrations from travis #24
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 26fa349c3dd53ee2121671c559df2c24b98e4772
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Aug 8 11:49:15 2017 +0200
+
+    Remove extra blank line #25
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 85bd950cd638731ee8c27aa291932148fb3ea71b
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Aug 8 11:45:30 2017 +0200
+
+    Clean the code before merge #25
+    
+    - Add missing initial migration file
+    - Code style and naming consistency
+    - Refine the README content
+    - Remove un-used module and section of code
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit a994a23cb25c91b40d89f168c47a10503661f307
+Merge: 9906a43 404c203
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Tue Aug 8 14:24:09 2017 +0530
+
+    Merge branch 'develop' into data_dump
+
+commit 9906a431b3084b9e60e7317d96cad41af642b14a
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 8 14:16:28 2017 +0530
+
+    Remove unique together on package #24
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 4698df0b082f638bd90562c3c8e77b6846ab359f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 8 14:02:52 2017 +0530
+
+    Resolve merge conflicts #24
+    * added doc-strings
+    * added unique together
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 4e4dcff1103507779ed0896840a25c299788ad90
+Merge: 931d539 218fffb
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Aug 7 23:44:09 2017 +0530
+
+    Merge branch 'data_dump' of https://github.com/nexB/vulnerablecode into data_dump
+
+commit 931d5398da35585489f2fcb7ed322935d04c75e4
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Aug 7 23:43:35 2017 +0530
+
+    Removed un-used variables #24
+    * removed un-wanted creation of vars
+    * added blank=true in urlfield
+    * removed un-used imports
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 218fffbf3bab2335a083a89e9c7e87a8ff1e9d5c
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Sat Aug 5 01:16:46 2017 +0530
+
+    Update readme with steps to scrape data and save in the DB
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 184266f25e471f67440f29f4dc3868fb8c65211b
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Sat Aug 5 01:04:38 2017 +0530
+
+    Add before_script commands to run Django tests
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 6bcf99219f27fe6870f9dc2792b1f8a2fb10152b
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Sat Aug 5 01:01:40 2017 +0530
+
+    Added Django in requirements.txt
+
+commit bd66de28e5ec1e934f153f957e2f5fe6355de573
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Sat Aug 5 00:52:03 2017 +0530
+
+    Update travis to run Django based tests
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit f56a019b23ffc0f7beb337904adad49d3e241266
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Sat Aug 5 00:48:36 2017 +0530
+
+    Update travis according to changed tests directory structure
+    
+    * added `cd app/` in before_script
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit a23d9164d1dcf257f060ef2a855c48047ff2f124
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sat Aug 5 00:32:37 2017 +0530
+
+    Changed .get() to .get(,'') in scraper #24
+    * an empty string will be returned instead of None
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit d5177f71ec23105956889e0ac8c1101b3cc16617
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sat Aug 5 00:25:56 2017 +0530
+
+    Removed null=true constraint #24
+    * changed test cases accordingly
+    * added blank=true
+    * cleaned test_models.py
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 404c203e78fea7c4e73149b61f1774de04ba2c1c
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Fri Aug 4 13:46:17 2017 +0530
+
+    Revert travis to stable state
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit a212d4119a687150d6104f3d99b1007d08a107d0
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Fri Aug 4 00:36:34 2017 +0530
+
+    Update .travis.yml
+
+commit 039ad6adfe384cee777f51cd68b594ae9f614597
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Fri Aug 4 00:34:18 2017 +0530
+
+    Update README.md
+
+commit e9d16e730e1c21d749123f9ed254b81b1385f99e
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Fri Aug 4 00:28:07 2017 +0530
+
+    Update .travis.yml
+
+commit ce03b4945935febe35a71af51c8571fe3e94a157
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Aug 4 00:20:20 2017 +0530
+
+    Change test cases format #24
+    
+    Signed-off-by: Kartik sibal <kartiksibal@gmail.com>
+
+commit 754c0d2b3947a919babf4b998d843d61e938ec18
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Fri Aug 4 00:19:28 2017 +0530
+
+    Update .travis.yml
+
+commit cc4200090ccf1bb836d43f4b86758fa40a6eb13e
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 3 17:08:54 2017 +0530
+
+    Updated data dumping code #24
+    * used Class.objects.create() instead of .save()
+    * remove un-necessary ubuntu_data method
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit f6cad6eaf0b3c04c02bfdf02dfa2d7c51bdeeb8f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 3 17:07:12 2017 +0530
+
+    Updated models as required #24
+    * added null=true in fields which can be nullable
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 4f2ffa3abb9f7ce6af8779ed7f8bb5034990c571
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 3 17:03:11 2017 +0530
+
+    Changed directory structure #24
+    * Moved tests and scraper code in app/
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 0a08cc4e2422a820765dd9202f951430a157158a
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Aug 3 16:57:19 2017 +0530
+
+    Added test cases for ubuntu, test_models.py #24
+    * removed loop, added individual asserts
+    * removed str()
+    * added test cases for ubuntu
+    * updated code formatting and test cases in test_models.py
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit d3850bb4f1246cd4628d1ee97ad57719503dee31
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Aug 2 06:44:54 2017 +0530
+
+    Moved data_dump to vulncode_app/
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 58e33db4268e40c16c167daa3f76aed1357d397f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Aug 2 01:51:55 2017 +0530
+
+    Remove pycodestyle errors #24
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 9c413dc694eba2554606f5fcf928d75efbb08542
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Aug 2 01:43:08 2017 +0530
+
+    Added test cases for data dump #24
+    * put expected value before test value
+    * retrieve attr values instead of converting to strings
+    * remove return statemetn in
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 0334beb45e3370ea11e4bc0f8abc53409a09a872
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 1 14:22:40 2017 +0530
+
+    Fixed pycodestyle error and re-worded variable names
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit f1a1e99d6196c684a86e7b5aa602639bd6ca6f81
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Aug 1 03:12:14 2017 +0530
+
+    Use seperate methods to scrape and dump data #24
+    * Changed test cases accordingly
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 49d0a2c4562b36045cd0be57d3e3cdf53fbf6cae
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 31 19:14:58 2017 +0530
+
+    Test cases for #24
+    * uses debian' test data to scrape
+    * dumps data in the test DB and verifies it
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 7825f98297113bb868087e944bf6b027f668863c
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 31 15:51:48 2017 +0530
+
+    Added docstrings & formatting changes #24
+    * moved .save() in the loop
+    * remove enumerate
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit b007cb262259add87436b8b9361893b1f92e2b95
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 27 16:20:49 2017 +0530
+
+    Update debian scraper and tests to include description #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit ea3695436ad15fc4edb4df0a60d97c244ab72588
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 27 16:14:44 2017 +0530
+
+    Scrapes data from debian & ubuntu, dump it in the D#24
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 3d78b73fe8b57f67e6e9c665de85e179a7f0b0d8
+Merge: ece0cdc 3e5009e
+Author: tdruez <tdruez@users.noreply.github.com>
+Date:   Wed Jul 26 10:03:48 2017 +0200
+
+    Merge pull request #17 from nexB/scraper_datastructure
+    
+    Refactor scraper logic and datastructure #16
+
+commit 3e5009eb09b188694bf36e5847e99d65a88137ce
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Tue Jul 25 23:48:58 2017 +0200
+
+    Improve function signatures, formatting and docstrings #16
+    
+     * use global URL as a default for a json_data() url arg
+     * use base_release as an arg for extract_data() with default to jessie
+     * do not use fragile chained get in extract_data() and check for
+       possible empty values ahead of use
+     * use more descriptive variable names
+     * improve docstrings
+     * organize imports and improve code formatting
+    
+    Signed-off-by: Philippe Ombredanne <pombredanne@nexb.com>
+
+commit acac3028f16df37d91d15d438346bd062efadc5f
+Author: Philippe Ombredanne <pombredanne@nexb.com>
+Date:   Tue Jul 25 23:40:06 2017 +0200
+
+    Improve debian test code format #16
+    
+     * organize and sort imports
+     * simplify reading test data from JSON
+     * format expectation
+    
+    Signed-off-by: Philippe Ombredanne <pombredanne@nexb.com>
+
+commit 28faba3d5847df44c1007f64da115eef9e0684a2
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Jul 26 02:25:46 2017 +0530
+
+    Correct JSON data int #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 1d206ee09d3940d37ae73d8a5c1ee582e33fd7fc
+Merge: 3048438 5b0d73d
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Jul 26 02:20:19 2017 +0530
+
+    Merge branch 'scraper_datastructure' of https://github.com/nexB/vulnerablecode into scraper_datastructure
+
+commit 30484388b6f0d67b2c50b3aca54ae0d94dceeeeb
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Jul 26 01:01:29 2017 +0530
+
+    Refactor code to ignore package, if no data for JESSIE & test case #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 5b0d73db69b18cd81393a695772a1afe6239dfc0
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Wed Jul 26 02:10:55 2017 +0530
+
+    Remove un-used import #16
+
+commit 3f42a4bcfe2e28765c2fcfad523080a1496a9f0f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Jul 26 01:01:29 2017 +0530
+
+    Refactor code to ignore package, if no data for JESSIE & test case #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit c4f522eb2e234fe80219d6f757764e80e0a59796
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jul 25 21:37:42 2017 +0530
+
+    Added test cases & converted upper case variables to lower case
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 1ab87c2ed81f5a25a2e09da35a37998d639680db
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jul 25 20:44:59 2017 +0530
+
+    Minor changes #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 5bb6cc346b813bbbbb7ac6c19bb21bc233bfe64a
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jul 25 20:42:40 2017 +0530
+
+    Updated tests #16
+    
+    Signed-off-by: Kartik Sibal
+
+commit 61f59e9454b312f219d39bd984782720e111f6c8
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jul 25 19:25:28 2017 +0530
+
+    Update data output format #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit ee2a03d7fdb6c1ad4f14f56c23da084b3a21ed10
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Mon Jul 24 14:21:33 2017 +0200
+
+    Fix expected value for the test_debian_extract_data test #16
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit a042d5537addb04f36e70fd159e865a69db87d84
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Mon Jul 24 17:03:33 2017 +0530
+
+    Minor changes #16
+
+commit dab151d2b36ede223d8d476e050274c1a824d58a
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 24 16:58:46 2017 +0530
+
+    Minor formatting changes #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 84aec1b7a8bfc47d49d7cabbf4c7eff3afe43418
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 24 16:47:51 2017 +0530
+
+    Formatting changes #16
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 85ec726db94aa2c96659bba12897ab80bb5c00b1
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 24 16:04:42 2017 +0530
+
+    Tests & formatting changes for Debian #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 1b1731913aecb6e54a9aacc101695bc235b24f11
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 24 04:55:55 2017 +0530
+
+    Change data output format #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit d39ddcf667d29e121917992a4f089fb72e6eb311
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sun Jul 23 23:09:49 2017 +0530
+
+    Use JSON to get Debian data #16
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit ece0cdc2d261042f527be3c87c4bc277d0227d5f
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 20 15:12:55 2017 -0400
+
+    Revert scraper module to its last stable state #16
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 1175a0affe737437260504d65fb8674c2f3f3158
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 20 15:04:52 2017 -0400
+
+    Refactor Ubuntu scraper logic #16
+    
+    - All data is scraped in 1 loop
+    - Remove the need for regex
+    - Return a dict datastructure
+    - Enhanced the tests using input as collected on the source
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 501427eff4a48689e876a96587e51cd0b3842aad
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 20 21:20:07 2017 +0530
+
+    Removed un-used variables #7
+    
+    Signed-off-by: kartik sibal <kartiksibal@gmail.com>
+
+commit 784a36733b8c36088f7aa74bb23a817cd18e1b88
+Merge: e55d29b 9533ffb
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 20 21:12:23 2017 +0530
+
+     Merge branch 'develop' of https://github.com/nexB/vulnerablecode into develop
+
+commit e55d29bb0cc5e8950a76bb7da8638cffb771deb4
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 20 21:12:02 2017 +0530
+
+    Change docstring text #5
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 7cbf4a503aeee1cb4ec5cabdbc084804fb9dc560
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 20 21:09:17 2017 +0530
+
+    Change data return format #6 #7
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 9533ffbc2657195981b72a79104a8cc63ec837b9
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Tue Jul 18 13:55:10 2017 +0530
+
+    Minor changes
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit e84b43cc1d756017b03201cec3c98f15f6fc7586
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jul 18 13:39:36 2017 +0530
+
+    Minor style changes
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit d6f0b65c1f8aa2ab186c1f2aa99e8313e1997ab5
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Tue Jul 18 12:07:16 2017 +0530
+
+    Minor changes in the models.
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 26d5f6a039b9537deb5a6850f63a4f86543a9b1f
+Merge: 12f9022 f0e46ce
+Author: tdruez <tdruez@users.noreply.github.com>
+Date:   Thu Jul 13 17:28:29 2017 -0700
+
+    Merge pull request #15 from nexB/models_db
+    
+    Database Model #5
+
+commit f0e46ceb1cfcc7cb40a841676484f604d6761b37
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 13 16:12:40 2017 -0700
+
+    Simplify status condition in extract_cves_from_tracker #6
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 11c7954a7780a8fc9909480d2dcda4d037c5c2ed
+Merge: 4abd00b 0b70285
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 13 16:07:41 2017 -0700
+
+    Merge branch 'models_db' of github.com:nexB/vulnerablecode into models_db
+
+commit 4abd00bade7c4c444c40ec10d3a3c6917106f55b
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 13 16:02:52 2017 -0700
+
+    Refactor and refine the code and structure for scrapers #6
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 70711c04b732bdf2a1f37ef199da1f5db1bce7ee
+Merge: 6569bb2 ff5739e
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 13 12:02:22 2017 -0700
+
+    Merge branch 'models_db' into scraper
+
+commit 6569bb22b24c08fd8608eeab04b953c392da79cd
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 13 11:57:03 2017 -0700
+
+    Move tests files in a tests/ directory #6
+    
+    - Add tests runner in the travis config
+    - Cleanup
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit b5e5ba39e6dc4869272c27a3abf3c01bcc0a7012
+Merge: 9b34f7a 12f9022
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Thu Jul 13 11:46:01 2017 -0700
+
+    Merge branch 'develop' into scraper
+
+commit 0b70285e5f160b423cfd8520b860294d40a4814f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 13 17:29:39 2017 +0530
+
+    Minor changes #5
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit f366133e5eaf13f812583bb6cc2e5d4611356c7c
+Merge: fee110a ff5739e
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 13 17:24:16 2017 +0530
+
+    Merge branch 'models_db' of https://github.com/nexB/vulnerablecode into models_db
+
+commit fee110a4d3e3ec541bb4b00f48f64b101ccfc829
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 13 17:23:59 2017 +0530
+
+    Minor style changes #5
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 9b34f7add89d54894fd0591766babd0085290f16
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 13 17:06:42 2017 +0530
+
+    Minor changes #6
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 84b4a2c6d922acd230cf268f31a4fa511f42ec27
+Merge: e7af960 980265c
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 13 15:55:52 2017 +0530
+
+    yMerge branch 'scraper' of https://github.com/nexB/vulnerablecode into scraper
+
+commit e7af9609ab55771f047519453eaf9b018c2f7bc9
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 13 15:55:30 2017 +0530
+
+    Debian test case and style changes #6
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 12f9022a3c213ac1e30e4bc01d4c1ec74b90b11f
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Jul 11 13:51:01 2017 -0700
+
+    Add Gitter integration notifications in travis config
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 980265c906afca0284b8792b0dd82438b992f5f3
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Jul 11 10:55:36 2017 -0700
+
+    Add lxml in the requirements.txt #6
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 5cddc893337cfc2317a04824a3b50b8b8c26d4ab
+Merge: 2285036 41ced1b
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Jul 11 10:49:02 2017 -0700
+
+    Merge branch 'develop' into scraper
+
+commit ff5739efd0c9d7d5569c0298dd8d93861f34ee4b
+Merge: 3f4ee4c 41ced1b
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Jul 11 10:48:26 2017 -0700
+
+    Merge branch 'develop' into models_db
+
+commit 41ced1b78907b29df9cc47c00e1f4e104d49e128
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Jul 11 10:45:19 2017 -0700
+
+    Add basic setup instructions in the README #11
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 2285036eca976c852533d297d9aa151ca1fb732b
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jul 11 09:59:08 2017 +0530
+
+    Add test cases for #6 Debian and #7 Ubuntu
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 3f4ee4ccf04fe102122e5830ccf1421736065866
+Merge: 3d1b938 5407e6e
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 10 13:29:08 2017 +0530
+
+     Merge branch 'models_db' of https://github.com/nexB/vulnerablecode into models_db
+
+commit 3d1b9389c75035b6197a767d3b52d66c11f27d7e
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jul 10 13:28:36 2017 +0530
+
+    Minor changes #5
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 525d1397bbb7b8982cdfc260463937b6a31043e8
+Merge: cdac54a e62ce1a
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sat Jul 8 02:25:04 2017 +0530
+
+    Merge branch 'scraper' of https://github.com/nexB/vulnerablecode into scraper
+
+commit cdac54abeb67a888966971129a6b9c5324801603
+Merge: 988726b 1ffe12e
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sat Jul 8 02:24:42 2017 +0530
+
+    Merge branch 'develop' of https://github.com/nexB/vulnerablecode into scraper
+
+commit 988726b3a17f00e09da82d10f824b7b1329a9702
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sat Jul 8 02:23:56 2017 +0530
+
+    File name change
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit e62ce1a5e6c033fcc3cdf970925c76ac6392aa47
+Merge: 2a86790 1ffe12e
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Fri Jul 7 09:06:13 2017 -0700
+
+    Merge branch 'develop' into scraper
+
+commit 1ffe12e13f0b56b8fa8b5cacb58b731df91825ea
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Fri Jul 7 08:54:39 2017 -0700
+
+    Increase the max-line-length to 100 #12
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 2a86790594cd0821353f0f9492c7186b24ed4cef
+Merge: a3dc2c4 e7e8997
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Jul 7 09:40:18 2017 +0530
+
+    Merge branch 'scraper' of https://github.com/nexB/vulnerablecode into scraper
+
+commit a3dc2c4c49d69008f90018bf2bf063d5a8552454
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Jul 7 09:36:50 2017 +0530
+
+    Style changes in Ubuntu #7
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit e7e89977b556f0d4dbbb41dc7e771186a89497fd
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Jul 7 09:36:50 2017 +0530
+
+    Style changes iUbuntu #7
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 05ec4d67021e76a866f6c3aa1b5014455134740d
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Jul 7 09:35:56 2017 +0530
+
+    Style changes in Debian #6
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit b8d81e4e2210f67639be46603ebb1dbcd7e8f901
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Wed Jul 5 14:57:41 2017 -0700
+
+    Replace build status string for .md in place of .rst #12
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 4c5d971ec70399c2bb8d5dd6034bc6c78d5050d2
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Wed Jul 5 14:53:51 2017 -0700
+
+    Add build status in the README #12
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit f1e308a17e2180d469729f5954023d890eda23ab
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Wed Jul 5 14:35:12 2017 -0700
+
+    Add Travis CI configuration file #12
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 8fcdc1828381ef4a2a6db46da92801fea01fa777
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 6 01:29:09 2017 +0530
+
+    Scrapes Ubuntu #7
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit d7164fc2e6d3f3c55c18ed3935c32721ae6208cf
+Merge: e3288ed f74520e
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 6 01:27:42 2017 +0530
+
+    Merge branch 'develop' of https://github.com/nexB/vulnerablecode into scraper
+
+commit e3288edb55c17491106f119a9cc5b6fa0e8211e1
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 6 01:26:55 2017 +0530
+
+    Debian Scraper #6
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit f74520eb9df51da23a8c36bf49dae0b32f93a22f
+Merge: cbe9125 5407e6e
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Thu Jul 6 01:22:50 2017 +0530
+
+    Merge pull request #13 from nexB/models_db
+    
+    Creates models for the DB
+
+commit 5407e6e74f1fa3f30d1d69cd9f5f3f668e5e5105
+Merge: c037707 cbe9125
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Thu Jul 6 01:22:39 2017 +0530
+
+    Merge branch 'develop' into models_db
+
+commit c0377076dda7003e4759a2117e357bd4558d4ec7
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jul 6 01:08:43 2017 +0530
+
+    Database model #5
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit cbe912555907836d8025ec9bdcf77be9b65c1d5e
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Thu Jun 29 16:35:48 2017 +0530
+
+    Use django app to query cve-search and display cve-ids #3
+    
+    * Use django app to query cve-search and display cve-ids
+    * Return data in JSON format
+    * Code style changes
+    * Add license & .gitignore
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+    Signed-off-by: Philippe Ombredanne <pombredanne@nexb.com>
+
+commit 0b85325398228d71c40232cd8477477eeeb6fb44
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jun 29 15:53:24 2017 +0530
+
+    Remove cache dir
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit decb9e2f85a02c0232f207bc1bca233951b8fd5d
+Merge: b4d701e 6798e3f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jun 29 15:47:00 2017 +0530
+
+    Merge branch 'django_app' of https://github.com/nexB/vulnerablecode into django_app
+
+commit b4d701ed13b6ba2ec4067a8cecd42bf3efe82418
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jun 29 15:45:42 2017 +0530
+
+    Remove sqlite db file #3
+    
+    Signed-off-by: Kartik Sibal <kartiksibal@gmail.com>
+
+commit 53d7eee83657fe2d9974fb9702dbdfd9da80598c
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jun 29 15:41:30 2017 +0530
+
+    Remove .pyc files #3
+    
+    Signed-off-by:Kartik Sibal <kartiksibal@gmail.com>
+
+commit 6798e3fcd8391c9ef673505f5a94442bfe7b08af
+Merge: 0d59f03 57c8c93
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Jun 27 11:37:15 2017 -0700
+
+    Merge branch 'develop' into django_app
+
+commit 0d59f03fdc63f72b2bae0adbc72959dd373bd6ba
+Author: tdruez <thomas.druez@gmail.com>
+Date:   Tue Jun 27 11:37:10 2017 -0700
+
+    Add PyCharm .idea/ directory to the gitignore
+    
+    Signed-off-by: Thomas Druez <tdruez@nexb.com>
+
+commit 57c8c93e8e38c17357082093f68129f8bae4caec
+Merge: 6e7f5d8 09413f9
+Author: tdruez <tdruez@users.noreply.github.com>
+Date:   Tue Jun 27 11:18:43 2017 -0700
+
+    Merge pull request #2 from nexB/cve_search_api
+    
+    #1 Query cve-search' database for package vulnerabilities
+
+commit 09413f9691905afc0ca3a886c7480cff3e9d6bd8
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jun 27 23:34:46 2017 +0530
+
+     #2 Fixes unit tests
+
+commit 2ad3a9cfc61347dc0e83d273381af701f0a4a530
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jun 27 23:25:27 2017 +0530
+
+    #2 Added test cases
+
+commit 3aa61aa4c0a7f1a623b3daf733c12e5f46342582
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jun 27 23:07:01 2017 +0530
+
+    #3 Add license & .gitignore
+
+commit 240ec002b6b052eaf46f87238d31cb5b1d4c9d11
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jun 27 22:07:47 2017 +0530
+
+    #2 Use dict comprehension & added test cases
+
+commit fe1441d1ff1a012531acc70db8210a44e5fc9842
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Thu Jun 22 23:40:22 2017 +0530
+
+    #2 Remove dict comprehension
+
+commit 50e094b11a5865b0ed44aa26befd22e44c77c2db
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Jun 21 15:35:51 2017 +0530
+
+    #2 Remove boilerplate code
+
+commit 5c41f09f6e9ef3bd6ab30ec5f0805f83a194956f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Wed Jun 21 15:33:43 2017 +0530
+
+    #3 Code style changes
+
+commit 2c542bde7429f48a24a9e11a61f0616f6a2a1240
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jun 20 23:07:03 2017 +0530
+
+    #2 Return cvss,summary and cve-ids
+
+commit 332e1943e3b0ac344f2710a1fcb0c23bec3c7b55
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Tue Jun 20 23:05:26 2017 +0530
+
+    #3 Return data in JSON format
+
+commit 892a28ced8a782e74d276f962d41b9cc037bff90
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jun 19 00:24:18 2017 +0530
+
+    #1 Minor fixes
+
+commit dc51a181417b173135719ccfd2fed526765025c4
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Mon Jun 19 00:22:20 2017 +0530
+
+    #2 Use django app to query cve-search and display cve-ids
+
+commit d2dad49abd3fa12b4a97708d6539deb151b28b0d
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sat Jun 17 12:54:19 2017 +0530
+
+    #1 Changes in testdata
+
+commit 4e5d290b925a1fb9d74628ff8c64f9ed8ef86d60
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Jun 16 09:29:40 2017 +0530
+
+    #1 general fixes
+
+commit 115933b6702a918f7f7947e01021d6b250aa2c6f
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Sat Jun 10 01:41:19 2017 +0530
+
+    #1 Use format
+
+commit 1f3bf763f38c862534802155e42c3d40d26ad6af
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Jun 9 19:32:24 2017 +0530
+
+    #1 Use args instead of user-input
+
+commit a973fb77342d3d4bf72c0e2872a78ce3ac4343a3
+Author: Kartik <kartiksibal@gmail.com>
+Date:   Fri Jun 9 16:39:41 2017 +0530
+
+    #1 Query cve-search' db
+
+commit 6e7f5d839c16cc8624e373ed14f4a69c62149196
+Author: Kartik Sibal <kartiksibal@gmail.com>
+Date:   Fri May 19 20:13:27 2017 +0530
+
+    Update README.md
+
+commit 6b3946a2f14475f457d9aa2e8b04ddd0c46d3e1c
+Author: Philippe Ombredanne <pombredanne@gmail.com>
+Date:   Fri May 19 09:56:18 2017 +0200
+
+    Initial commit

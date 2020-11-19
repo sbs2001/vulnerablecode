@@ -46,7 +46,7 @@ from vulnerabilities.data_source import DataSource
 from vulnerabilities.data_source import DataSourceConfiguration
 from vulnerabilities.data_source import Reference
 from vulnerabilities.package_managers import PypiVersionAPI
-
+from vulnerabilities.helpers import create_etag
 
 def validate_schema(advisory_dict):
 
@@ -92,7 +92,7 @@ class SafetyDbDataSource(DataSource):
         asyncio.run(self._versions.load_api(packages))
 
     def _fetch(self) -> Mapping[str, Any]:
-        if self.create_etag(self.config.url):
+        if create_etag(data_src=self, url=self.config.url, etag_key="ETag"):
             with urlopen(self.config.url) as response:
                 return json.load(response)
 
@@ -136,19 +136,6 @@ class SafetyDbDataSource(DataSource):
                     )
 
         return self.batch_advisories(advisories)
-
-    def create_etag(self, url):
-        etag = requests.head(url).headers.get('ETag')
-        if not etag:
-            # Kind of inaccurate to return True since etag is
-            # not created
-            return True
-        elif url in self.config.etags:
-            if self.config.etags[url] == etag:
-                return False
-        self.config.etags[url] = etag
-        return True
-
 
 def categorize_versions(
     package_name: str, all_versions: Set[str], version_specs: Iterable[str],
