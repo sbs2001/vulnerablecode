@@ -106,9 +106,7 @@ class Command(BaseCommand):
                 ImportRunner(importer, batch_size).run(cutoff_date=cutoff_date)
                 self.stdout.write(
                     self.style.SUCCESS(f'Successfully imported data from {importer.name}'))
-            except:
+            except Exception as e:
+                print(e)
                 self.stdout.write(
                     self.style.ERROR(f'Importing data from {importer.name} failed'))
-                
-
-            
