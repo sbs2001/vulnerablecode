@@ -28,7 +28,7 @@ from vulnerabilities.data_source import Advisory
 from vulnerabilities.data_source import DataSource
 from vulnerabilities.data_source import DataSourceConfiguration
 from vulnerabilities.data_source import Reference
-
+import vulnerabilities.nevra as nevra
 
 class RedhatDataSource(DataSource):
     CONFIG_CLASS = DataSourceConfiguration
@@ -101,13 +101,8 @@ def to_advisory(advisory_data):
 
 def rpm_to_purl(rpm_string):
 
-    # Red Hat uses `-:0` instead of just `-` to separate
-    # package name and version
-    components = rpm_string.split("-0:")
-    if len(components) != 2:
-        return
-
-    name, version = components
+    epoch , name, version, release, arch = nevra.from_name(rpm_string)
+    return PackageURL(type="rpm", namespace="redhat", version=version,)
 
     if version[0].isdigit():
         return PackageURL(name=name, type="rpm", version=version, namespace="redhat")
