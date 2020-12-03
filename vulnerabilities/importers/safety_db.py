@@ -139,7 +139,11 @@ class SafetyDbDataSource(DataSource):
 def categorize_versions(
     package_name: str,
     all_versions: Set[str],
+<<<<<<< HEAD
     version_ranges: Iterable[str],
+=======
+    version_specs: Iterable[str],
+>>>>>>> 2d16304805430fa495713c15a798921c69416f35
 ) -> Tuple[Set[PackageURL], Set[PackageURL]]:
     """
     :return: impacted, resolved purls
