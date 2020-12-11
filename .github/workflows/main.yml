@@ -1,7 +1,9 @@
-name: VulnerableCode unit tests
-on: pull_request
+name: CI
+on:
+  pull_request:
+    types: [opened, synchronize]
 jobs:
-  runner-job:
+  unit_tests:
     runs-on: ubuntu-latest
 
     services:
@@ -43,4 +45,4 @@ jobs:
           VC_DB_USER: postgres
           POSTGRES_PORT: 5432
           DJANGO_DEV: 1
-          GH_TOKEN: 1
+          GH_TOKEN: 1 
