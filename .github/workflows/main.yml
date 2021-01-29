@@ -1,21 +1,13 @@
-name: Whatever
+name: CI
 on: push
 jobs:
-  # Label of the runner job
-  runner-job:
-    # You must use a Linux environment when using service containers or container jobs
+  unit_tests:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8]
 
-    # Service containers to run with `runner-job`
     services:
       # Label used to access the service container
       postgres:
-        # Docker Hub image
         image: postgres
-        # Provide the password for postgres
         env:
           POSTGRES_PASSWORD: vulnerablecode
           POSTGRES_DB: vulnerablecode
@@ -29,28 +21,26 @@ jobs:
           # Maps tcp port 5432 on service container to the host
           - 5432:5432
     steps:
-      # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
-      # Performs a clean installation of all dependencies in the `package.json` file
-      # For more information, see https://docs.npmjs.com/cli/ci.html
+          python-version: 3.8
+
       - name: Install dependencies
-        run: sudo apt install  python3-dev postgresql libpq-dev build-essential libxml2-dev libxslt1-dev && python -m pip install --upgrade pip  && pip install -r requirements.txt
+        run: |
+          sudo apt install  python3-dev postgresql libpq-dev build-essential libxml2-dev libxslt1-dev 
+          python -m pip install --upgrade pip 
+          pip install -r requirements.txt
     
-      - name: Connect to PostgreSQL
-        # Runs a script that creates a PostgreSQL client, populates
-        # the client with data, and retrieves data
-        run: python3 manage.py migrate && python3 manage.py import retiredotnet suse_backports debian_oval redhat nvd gentoo ubuntu_usn msr2019 kaybee nginx postgresql openssl apache_httpd rust alpine archlinux debian npm ruby
-        # a new PostgreSQL client.
+      - name: Run tests
+        run: python manage.py import ubuntu
         env:
-          # The hostname used to communicate with the PostgreSQL service container
+          # The hostname, username used to communicate with the PostgreSQL service container
           POSTGRES_HOST: localhost
           VC_DB_USER: postgres
-          # The default PostgreSQL port
           POSTGRES_PORT: 5432
           DJANGO_DEV: 1
+          GH_TOKEN: 1 
