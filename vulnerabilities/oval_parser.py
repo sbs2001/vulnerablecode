@@ -149,7 +149,7 @@ class OvalParser:
                 operand = self.translations[var.get('operation')]
                 version = var.text
                 version_range = operand + version
-                return RangeSpecifier(version_range)
+                return RangeSpecifier(version_range.replace(".x", ""))
 
     @staticmethod
     def get_urls_from_definition(definition: OvalDefinition) -> Set[str]:
