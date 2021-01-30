@@ -533,4 +533,5 @@ class OvalDataSource(DataSource):
                     resolved_package_urls=safe_purls,
                     cve_id=vuln_id,
                     vuln_references=references))
+            print(len(all_adv))
         return all_adv
