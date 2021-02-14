@@ -38,10 +38,20 @@ from drf_spectacular.types import OpenApiTypes
 from vulnerabilities.models import Package
 from vulnerabilities.models import Vulnerability
 from vulnerabilities.models import VulnerabilityReference
+from vulnerabilities.models import VulnerabilitySeverity
 
 # This serializer is used for the bulk apis, to prevent wrong auto documentation
 # TODO: Fix the swagger documentation for bulk apis
 placeholder_serializer = inline_serializer(name="Placeholder", fields={})
+
+
+class VulnerabilitySeveritySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VulnerabilitySeverity
+        fields = [
+            "value",
+            "scoring_system"
+        ]
 
 
 class VulnerabilityReferenceSerializer(serializers.ModelSerializer):
