@@ -38,8 +38,8 @@ class TestDebianOvalDataSource(unittest.TestCase):
     @patch(
         'vulnerabilities.importers.debian_oval.DebianVersionAPI.get',
         return_value={
-            '0:1.11.1+dfsg-5+deb7u1',
-            '0:0.11.1+dfsg-5+deb7u1',
+            '1.11.1+dfsg-5+deb7u1',
+            '0.11.1+dfsg-5+deb7u1',
             '2.3.9'})
     @patch('vulnerabilities.importers.debian_oval.DebianVersionAPI.load_api', new=mock)
     def test_get_data_from_xml_doc(self, mock_write):
@@ -51,7 +51,7 @@ class TestDebianOvalDataSource(unittest.TestCase):
                         type='deb',
                         namespace=None,
                         name='krb5',
-                        version='0:0.11.1+dfsg-5+deb7u1',
+                        version='0.11.1+dfsg-5+deb7u1',
                         qualifiers=OrderedDict([('distro', 'wheezy')]),
                         subpath=None
                     )},
@@ -60,7 +60,7 @@ class TestDebianOvalDataSource(unittest.TestCase):
                         type='deb',
                         namespace=None,
                         name='krb5',
-                        version='0:1.11.1+dfsg-5+deb7u1',
+                        version='1.11.1+dfsg-5+deb7u1',
                         qualifiers=OrderedDict([('distro', 'wheezy')]),
                         subpath=None),
                     PackageURL(
@@ -79,7 +79,7 @@ class TestDebianOvalDataSource(unittest.TestCase):
                         type='deb',
                         namespace=None,
                         name='a2ps',
-                        version='0:0.11.1+dfsg-5+deb7u1',
+                        version='0.11.1+dfsg-5+deb7u1',
                         qualifiers=OrderedDict([('distro', 'wheezy')]),
                         subpath=None
                     )},
@@ -93,7 +93,7 @@ class TestDebianOvalDataSource(unittest.TestCase):
                     PackageURL(type='deb',
                                namespace=None,
                                name='a2ps',
-                               version='0:1.11.1+dfsg-5+deb7u1',
+                               version='1.11.1+dfsg-5+deb7u1',
                                qualifiers=OrderedDict([('distro', 'wheezy')]),
                                subpath=None)},
                 vulnerability_id='CVE-2001-1593')
