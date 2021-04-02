@@ -35,6 +35,8 @@ from vulnerabilities.data_source import Advisory
 from vulnerabilities.data_source import DataSource
 from vulnerabilities.data_source import DataSourceConfiguration
 from vulnerabilities.data_source import Reference
+from vulnerabilities.data_source import VulnerabilitySeverity
+from vulnerabilities.severity_systems import scoring_systems
 
 
 def validate_schema(advisory_dict):
@@ -89,7 +91,10 @@ class ArchlinuxDataSource(DataSource):
             for name in record["packages"]:
                 impacted_purls.add(
                     PackageURL(
-                        name=name, type="pacman", namespace="archlinux", version=record["affected"],
+                        name=name,
+                        type="pacman",
+                        namespace="archlinux",
+                        version=record["affected"],
                     )
                 )
 
@@ -103,16 +108,21 @@ class ArchlinuxDataSource(DataSource):
                         )
                     )
 
-            vuln_references = []
-            vuln_references.append(
+            references = []
+            references.append(
                 Reference(
                     reference_id=record["name"],
                     url="https://security.archlinux.org/{}".format(record["name"]),
+                    severities=[
+                        VulnerabilitySeverity(
+                            system=scoring_systems["avgs"], value=record["severity"]
+                        )
+                    ],
                 )
             )
 
             for ref in record["advisories"]:
-                vuln_references.append(
+                references.append(
                     Reference(
                         reference_id=ref,
                         url="https://security.archlinux.org/{}".format(ref),
@@ -121,11 +131,11 @@ class ArchlinuxDataSource(DataSource):
 
             advisories.append(
                 Advisory(
-                    cve_id=cve_id,
+                    vulnerability_id=cve_id,
                     summary="",
                     impacted_package_urls=impacted_purls,
                     resolved_package_urls=resolved_purls,
-                    vuln_references=vuln_references,
+                    references=references,
                 )
             )
 

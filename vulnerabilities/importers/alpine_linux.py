@@ -20,92 +20,122 @@
 #  for any legal advice.
 #  VulnerableCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/vulnerablecode/ for support and download.
+from re import IGNORECASE
 from typing import Any
 from typing import Iterable
 from typing import List
 from typing import Mapping
 from typing import Set
 
+import requests
+import yaml
+from bs4 import BeautifulSoup
 from packageurl import PackageURL
 from schema import Or
 from schema import Regex
 from schema import Schema
 
 from vulnerabilities.data_source import Advisory
-from vulnerabilities.data_source import GitDataSource
+from vulnerabilities.data_source import DataSource
 from vulnerabilities.data_source import Reference
-from vulnerabilities.helpers import load_yaml
+from vulnerabilities.helpers import is_cve
+
+BASE_URL = "https://secdb.alpinelinux.org/"
 
 
-def validate_schema(advisory_dict):
-    scheme = {
-        "distroversion": Regex(r"v\d.\d*"),
-        "reponame": str,
-        "archs": list,
-        "packages": [
-            {
-                "pkg": {
-                    "name": str,
-                    "secfixes": {
-                        str: Or(
-                            [
-                                Or(
-                                    Regex(r"CVE.\d+-\d+"),
-                                    Regex(r"XSA-\d{3}"),
-                                    Regex(r"ZBX-\d{4}"),
-                                    Regex(r"wnpa-sec-\d{4}-\d{2}"),
-                                )
-                            ],
-                            "",
-                            # FIXME: Remove the None when below issue gets fixed
-                            # https://gitlab.alpinelinux.org/alpine/infra/alpine-secdb/-/issues/1
-                            None,
-                        ),
-                    },
-                }
-            }
-        ],
-        object: object,
-    }
-    Schema(scheme).validate(advisory_dict)
+# def validate_schema(advisory_dict):
+#     scheme = {
+#         "distroversion": Regex(r"v\d.\d*"),
+#         "reponame": str,
+#         "archs": list,
+#         "packages": [
+#             {
+#                 "pkg": {
+#                     "name": str,
+#                     "secfixes": {
+#                         str: Or(
+#                             [
+#                                 Or(
+#                                     Regex(r"CVE.\d+-\d+", flags=IGNORECASE),
+#                                     Regex(r"XSA-\d{3}"),
+#                                     Regex(r"ZBX-\d{4}"),
+#                                     Regex(r"wnpa-sec-\d{4}-\d{2}"),
+#                                     Regex(r"GHSA-.{4}-.{4}-.{4}"),
+#                                 )
+#                             ],
+#                             "",
+#                             # FIXME: Remove the None when below issue gets fixed
+#                             # https://gitlab.alpinelinux.org/alpine/infra/alpine-secdb/-/issues/1
+#                             None,
+#                         ),
+#                     },
+#                 }
+#             }
+#         ],
+#         object: object,
+#     }
+#     Schema(scheme).validate(advisory_dict)
 
 
-class AlpineDataSource(GitDataSource):
-    def __enter__(self):
-        super(AlpineDataSource, self).__enter__()
+class AlpineDataSource(DataSource):
+    @staticmethod
+    def fetch_advisory_links():
+        index_page = BeautifulSoup(requests.get(BASE_URL).content, features="lxml")
 
-        if not getattr(self, "_added_files", None):
-            self._added_files, self._updated_files = self.file_changes(
-                recursive=True, file_ext="yaml"
+        alpine_versions = [
+            link.text for link in index_page.find_all("a") if link.text.startswith("v")
+        ]
+
+        advisory_directory_links = [f"{BASE_URL}{version}" for version in alpine_versions]
+
+        advisory_links = []
+        for advisory_directory_link in advisory_directory_links:
+            advisory_directory_page = requests.get(advisory_directory_link).content
+            advisory_directory_page = BeautifulSoup(advisory_directory_page, features="lxml")
+            advisory_links.extend(
+                [
+                    f"{advisory_directory_link}{anchore_tag.text}"
+                    for anchore_tag in advisory_directory_page.find_all("a")
+                    if anchore_tag.text.endswith("yaml")
+                ]
             )
 
+        return advisory_links
+
     def updated_advisories(self) -> Set[Advisory]:
-        files = self._updated_files.union(self._added_files)
         advisories = []
-        for f in files:
-            advisories.extend(self._process_file(f))
+        advisory_links = self.fetch_advisory_links()
+        for link in advisory_links:
+            advisories.extend(self._process_link(link))
 
         return self.batch_advisories(advisories)
 
-    def _process_file(self, path) -> List[Advisory]:
+    def _process_link(self, link) -> List[Advisory]:
         advisories = []
+        yaml_response = requests.get(link).content
+        record = yaml.safe_load(yaml_response)
 
-        record = load_yaml(path)
         if record["packages"] is None:
             return advisories
-        validate_schema(record)
 
         for p in record["packages"]:
             advisories.extend(
                 self._load_advisories(
-                    p["pkg"], record["distroversion"], record["reponame"], record["archs"],
+                    p["pkg"],
+                    record["distroversion"],
+                    record["reponame"],
+                    record["archs"],
                 )
             )
 
         return advisories
 
     def _load_advisories(
-        self, pkg_infos: Mapping[str, Any], distroversion: str, reponame: str, archs: Iterable[str],
+        self,
+        pkg_infos: Mapping[str, Any],
+        distroversion: str,
+        reponame: str,
+        archs: Iterable[str],
     ) -> List[Advisory]:
 
         advisories = []
@@ -157,13 +187,14 @@ class AlpineDataSource(GitDataSource):
                             )
                         )
 
+                # TODO: Handle the CVE-????-????? case
                 advisories.append(
                     Advisory(
                         summary="",
                         impacted_package_urls=[],
                         resolved_package_urls=resolved_purls,
-                        vuln_references=references,
-                        cve_id=vuln_ids[0] if vuln_ids[0] != "CVE-????-?????" else None,
+                        references=references,
+                        vulnerability_id=vuln_ids[0] if is_cve(vuln_ids[0]) else "",
                     )
                 )
 

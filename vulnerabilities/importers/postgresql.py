@@ -58,7 +58,7 @@ class PostgreSQLDataSource(DataSource):
 
 def to_advisories(data):
     advisories = []
-    soup = BeautifulSoup(data)
+    soup = BeautifulSoup(data, features="lxml")
     table = soup.select("table")[0]
     for row in table.select("tbody tr"):
         ref_col, affected_col, fixed_col, severity_score_col, desc_col = row.select("td")
@@ -105,9 +105,9 @@ def to_advisories(data):
 
         advisories.append(
             Advisory(
-                cve_id=cve_id,
+                vulnerability_id=cve_id,
                 summary=summary,
-                vuln_references=references,
+                references=references,
                 impacted_package_urls=affected_packages,
                 resolved_package_urls=fixed_packages,
             )

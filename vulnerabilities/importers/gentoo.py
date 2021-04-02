@@ -77,11 +77,11 @@ class GentooDataSource(GitDataSource):
         # this way, but there seems no alternative.
         for cve in xml_data["cves"]:
             advisory = Advisory(
-                cve_id=cve,
+                vulnerability_id=cve,
                 summary=xml_data["description"],
                 impacted_package_urls=xml_data["affected_purls"],
                 resolved_package_urls=xml_data["unaffected_purls"],
-                vuln_references=vuln_reference,
+                references=vuln_reference,
             )
             advisory_list.append(advisory)
         return advisory_list
@@ -104,7 +104,9 @@ class GentooDataSource(GitDataSource):
 
         for pkg in affected_elem:
             for info in pkg:
-                pkg_ns, pkg_name, = pkg.attrib["name"].split("/")
+                pkg_ns, pkg_name, = pkg.attrib[
+                    "name"
+                ].split("/")
                 purl = PackageURL(type="ebuild", name=pkg_name, version=info.text, namespace=pkg_ns)
 
                 if info.attrib.get("range"):

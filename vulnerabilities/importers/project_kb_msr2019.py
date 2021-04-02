@@ -47,7 +47,7 @@ class ProjectKBMSRDataSource(DataSource):
 
     CONFIG_CLASS = ProjectKBDataSourceConfiguration
 
-    url = "https://raw.githubusercontent.com/SAP/project-kb/master/MSR2019/dataset/vulas_db_msr2019_release.csv"  # nopep8
+    url = "https://raw.githubusercontent.com/SAP/project-kb/master/MSR2019/dataset/vulas_db_msr2019_release.csv"
 
     def updated_advisories(self):
         if create_etag(data_src=self, url=self.url, etag_key="ETag"):
@@ -81,8 +81,8 @@ class ProjectKBMSRDataSource(DataSource):
                 Advisory(
                     summary="",
                     impacted_package_urls=[],
-                    vuln_references=[reference],
-                    cve_id=vuln_id,
+                    references=[reference],
+                    vulnerability_id=vuln_id,
                 )
             )
 

@@ -35,37 +35,43 @@ from django.views.generic.edit import DeleteView
 
 from vulnerabilities import forms
 from vulnerabilities import models
+from vulnerablecode.settings import ENABLE_CURATION
 
 
 class PackageSearchView(View):
     template_name = "packages.html"
 
     def get(self, request):
-        context = {"form": forms.PackageForm()}
+        context = {"form": forms.PackageForm(request.GET or None)}
 
         if request.GET:
             packages = self.request_to_queryset(request)
-            total_results = packages.count()
+            result_size = packages.count()
             page_no = int(request.GET.get("page", 1))
             packages = Paginator(packages, 50).get_page(page_no)
             context["packages"] = packages
             context["searched_for"] = urlencode(
                 {param: request.GET[param] for param in request.GET if param != "page"}
             )
-            context["total_results"] = total_results
+            context["result_size"] = result_size
 
         return render(request, self.template_name, context)
 
     @staticmethod
     def request_to_queryset(request):
-        query = {}
+        package_type = ""
+        package_name = ""
+
+        if len(request.GET["type"]):
+            package_type = request.GET["type"]
+
         if len(request.GET["name"]):
-            query["name"] = request.GET["name"]
+            package_name = request.GET["name"]
 
-        if len(request.GET["version"]):
-            query["version"] = request.GET["version"]
-
-        return models.Package.objects.all().filter(**query)
+        return models.Package.objects.all().filter(
+            name__icontains=package_name,
+            type__icontains=package_type,
+        )
 
 
 class VulnerabilitySearchView(View):
@@ -73,14 +79,13 @@ class VulnerabilitySearchView(View):
     template_name = "vulnerabilities.html"
 
     def get(self, request):
-        context = {"form": forms.CVEForm()}
+        context = {"form": forms.CVEForm(request.GET or None)}
         if request.GET:
             vulnerabilities = self.request_to_queryset(request)
+            result_size = vulnerabilities.count()
             pages = Paginator(vulnerabilities, 50)
-            result_size = pages.count
             vulnerabilities = pages.get_page(int(self.request.GET.get("page", 1)))
             context["vulnerabilities"] = vulnerabilities
-            context["searched_for"] = request.GET.get("vuln_id")
             context["result_size"] = result_size
 
         return render(request, self.template_name, context)
@@ -88,7 +93,7 @@ class VulnerabilitySearchView(View):
     @staticmethod
     def request_to_queryset(request):
         vuln_id = request.GET["vuln_id"]
-        return models.Vulnerability.objects.filter(cve_id__contains=vuln_id)
+        return models.Vulnerability.objects.filter(vulnerability_id__icontains=vuln_id)
 
 
 class PackageUpdate(UpdateView):
@@ -102,6 +107,7 @@ class PackageUpdate(UpdateView):
         resolved_vuln, unresolved_vuln = self._package_vulnerabilities(self.kwargs["pk"])
         context["resolved_vuln"] = resolved_vuln
         context["impacted_vuln"] = unresolved_vuln
+        context["enable_curation"] = ENABLE_CURATION
 
         return context
 
@@ -130,6 +136,7 @@ class VulnerabilityDetails(ListView):
     def get_context_data(self, **kwargs):
         context = super(VulnerabilityDetails, self).get_context_data(**kwargs)
         context["vulnerability"] = models.Vulnerability.objects.get(id=self.kwargs["pk"])
+        context["enable_curation"] = ENABLE_CURATION
         return context
 
     def get_queryset(self):
@@ -140,7 +147,7 @@ class VulnerabilityCreate(CreateView):
 
     template_name = "vulnerability_create.html"
     model = models.Vulnerability
-    fields = ["cve_id", "summary"]
+    fields = ["vulnerability_id", "summary"]
 
     def get_success_url(self):
 
@@ -176,7 +183,7 @@ class HomePage(View):
     template_name = "index.html"
 
     def get(self, request):
-        return render(request, self.template_name)
+        return render(request, self.template_name, context={"enable_curation": ENABLE_CURATION})
 
 
 class PackageRelatedVulnerablityCreate(View):
@@ -191,7 +198,7 @@ class PackageRelatedVulnerablityCreate(View):
         if "vuln_id" in self.request.POST:
             is_vulnerable = "impacted" in self.request.headers["Referer"]
             relation = self.create_relationship_instance(
-                cve_id=self.request.POST["vuln_id"],
+                vulnerability_id=self.request.POST["vuln_id"],
                 package_id=kwargs["pid"],
                 is_vulnerable=is_vulnerable,
             )
@@ -212,9 +219,11 @@ class PackageRelatedVulnerablityCreate(View):
         return existing_relation.exists()
 
     @staticmethod
-    def create_relationship_instance(cve_id, package_id, is_vulnerable):
+    def create_relationship_instance(vulnerability_id, package_id, is_vulnerable):
         package = models.Package.objects.get(id=package_id)
-        vulnerability, vuln_created = models.Vulnerability.objects.get_or_create(cve_id=cve_id)
+        vulnerability, vuln_created = models.Vulnerability.objects.get_or_create(
+            vulnerability_id=vulnerability_id
+        )  # nopep8
         return models.PackageRelatedVulnerability(
             vulnerability=vulnerability, package=package, is_vulnerable=is_vulnerable
         )

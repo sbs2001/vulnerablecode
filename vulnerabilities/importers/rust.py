@@ -74,12 +74,12 @@ class RustDataSource(GitDataSource):
         self.set_api(packages)
 
         while files:
-            batch, files = files[: self.batch_size], files[self.batch_size:]
-            advisories = set()
+            batch, files = files[: self.batch_size], files[self.batch_size :]
+            advisories = []
             for path in batch:
                 advisory = self._load_advisory(path)
                 if advisory:
-                    advisories.add(advisory)
+                    advisories.append(advisory)
             yield advisories
 
     def collect_packages(self, paths):
@@ -135,8 +135,8 @@ class RustDataSource(GitDataSource):
             summary=advisory.get("description", ""),
             impacted_package_urls=impacted_purls,
             resolved_package_urls=resolved_purls,
-            cve_id=cve_id,
-            vuln_references=references,
+            vulnerability_id=cve_id,
+            references=references,
         )
 
 

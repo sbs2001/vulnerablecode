@@ -38,12 +38,13 @@ from vulnerabilities.data_source import Advisory
 from vulnerabilities.data_source import DataSource
 from vulnerabilities.data_source import DataSourceConfiguration
 from vulnerabilities.data_source import Reference
-
+from vulnerabilities.data_source import VulnerabilitySeverity
 from vulnerabilities.package_managers import MavenVersionAPI
 from vulnerabilities.package_managers import NugetVersionAPI
 from vulnerabilities.package_managers import ComposerVersionAPI
 from vulnerabilities.package_managers import PypiVersionAPI
 from vulnerabilities.package_managers import RubyVersionAPI
+from vulnerabilities.severity_systems import scoring_systems
 
 # set of all possible values of first '%s' = {'MAVEN','COMPOSER', 'NUGET', 'RUBYGEMS', 'PYPI'}
 # second '%s' is interesting, it will have the value '' for the first request,
@@ -63,6 +64,7 @@ query = """
                 references {
                     url
                 }
+                severity
                 }
                 package {
                 name
@@ -155,7 +157,11 @@ class GitHubAPIDataSource(DataSource):
             return ns, name
 
         if ecosystem == "COMPOSER":
-            vendor, name = pkg_name.split("/")
+            try:
+                vendor, name = pkg_name.split("/")
+            except ValueError:
+                # TODO log this
+                return None
             return vendor, name
 
         if ecosystem == "NUGET" or ecosystem == "PIP" or ecosystem == "RUBYGEMS":
@@ -167,14 +173,9 @@ class GitHubAPIDataSource(DataSource):
         for ref in reference_data:
             url = ref["url"]
             if "GHSA-" in url.upper():
-                reference = Reference(
-                    url=url,
-                    reference_id=url.split("/")[-1]
-                )
+                reference = Reference(url=url, reference_id=url.split("/")[-1])
             else:
-                reference = Reference(
-                    url=url
-                )
+                reference = Reference(url=url)
             references.append(reference)
 
         return references
@@ -215,21 +216,36 @@ class GitHubAPIDataSource(DataSource):
                         unaffected_purls = set()
 
                     cve_ids = set()
-                    vuln_references = self.extract_references(adv["node"]["advisory"]["references"])
+                    references = self.extract_references(adv["node"]["advisory"]["references"])
                     vuln_desc = adv["node"]["advisory"]["summary"]
 
-                    for vuln in adv["node"]["advisory"]["identifiers"]:
-                        if vuln["type"] == "CVE":
-                            cve_ids.add(vuln["value"])
+                    for identifier in adv["node"]["advisory"]["identifiers"]:
+                        # collect CVEs
+                        if identifier["type"] == "CVE":
+                            cve_ids.add(identifier["value"])
+
+                        # attach the GHSA with severity score
+                        if identifier["type"] == "GHSA":
+                            for ref in references:
+                                if ref.reference_id == identifier["value"]:
+                                    ref.severities = [
+                                        VulnerabilitySeverity(
+                                            system=scoring_systems["cvssv3.1_qr"],
+                                            value=adv["node"]["advisory"]["severity"],
+                                        )
+                                    ]
+                                    # Each Node has only one GHSA, hence exit after attaching
+                                    # score to this GHSA
+                                    break
 
                     for cve_id in cve_ids:
                         adv_list.append(
                             Advisory(
-                                cve_id=cve_id,
+                                vulnerability_id=cve_id,
                                 summary=vuln_desc,
                                 impacted_package_urls=affected_purls,
                                 resolved_package_urls=unaffected_purls,
-                                vuln_references=vuln_references,
+                                references=references,
                             )
                         )
         return adv_list

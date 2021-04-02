@@ -13,7 +13,7 @@
     type = "github";
     owner = "DavHau";
     repo = "mach-nix";
-    ref = "3.1.1";
+    ref = "235a0a81d05a043bca2a93442f2560946266fc73";
   };
 
   outputs = { self, nixpkgs, machnix }:
@@ -49,13 +49,13 @@
           python = "python38";
 
           # Pin pypi repo to a specific commit which includes all necessary
-          # Python deps. The default version is updated with every mach-nix
-          # release might be be sufficient for newer releases.
-          # The corresponding sha256 hash can be obtained with:
-          # $ nix-prefetch-url --unpack https://github.com/DavHau/pypi-deps-db/tarball/<pypiDataRev>
-          pypiDataRev = "c86b4490a7d838bd54a2d82730455e96c6e4eb14";
+          # Python deps. The default version (which is updated with every
+          # mach-nix release) is usually insufficient. Use
+          # ./get-latest-pypi-deps-db.sh to obtain the data rev & hash.
+          pypiDataRev =
+            "e9b0fc6b92cd6efbca7ba3b3d4a551bcc13a73c5"; # 2021-03-27T08:13:04Z
           pypiDataSha256 =
-            "0al490gi0qda1nkb9289z2msgpc633rv5hn3w5qihkl1rh88dmjd";
+            "1ssa48l2iz8kncby1gfrbds79mg114dkhpxrridwcq6q2c37p62s";
         });
 
     in {

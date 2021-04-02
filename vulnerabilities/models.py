@@ -1,4 +1,3 @@
-#
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/vulnerablecode/
 # The VulnerableCode software is licensed under the Apache License version 2.0.
@@ -23,14 +22,18 @@
 
 import importlib
 from datetime import datetime
+from time import sleep
 
 from django.db import models
+from django.db import IntegrityError
+from django.db import transaction
 import django.contrib.postgres.fields as pgfields
 from django.utils.translation import ugettext_lazy as _
 from packageurl.contrib.django.models import PackageURLMixin
 from packageurl import PackageURL
 
 from vulnerabilities.data_source import DataSource
+from vulnerabilities.severity_systems import scoring_systems
 
 
 class Vulnerability(models.Model):
@@ -39,9 +42,37 @@ class Vulnerability(models.Model):
     VulnerabilityReference.
     """
 
-    cve_id = models.CharField(max_length=50, help_text="CVE ID", unique=True, null=True)
-    summary = models.TextField(help_text="Summary of the vulnerability", blank=True)
-    cvss = models.FloatField(max_length=100, help_text="CVSS Score", null=True)
+    vulnerability_id = models.CharField(
+        max_length=50,
+        help_text="Unique identifier for a vulnerability: this is either a published CVE id"
+        " (as in CVE-2020-7965) if it exists. Otherwise this is a VulnerableCode-assigned VULCOID"
+        " (as in VULCOID-20210222-1315-16461541). When a vulnerability CVE is assigned later we"
+        " replace this with the CVE and keep the 'old' VULCOID in the 'old_vulnerability_id'"
+        " field to support redirection to the CVE id.",
+        unique=True,
+    )
+    old_vulnerability_id = models.CharField(
+        max_length=50,
+        help_text="empty if no  CVE else VC id",
+        unique=True,
+        null=True,
+    )
+    summary = models.TextField(
+        help_text="Summary of the vulnerability",
+        blank=True,
+    )
+
+    def save(self, *args, **kwargs):
+        if not self.vulnerability_id:
+            self.vulnerability_id = self.generate_vulcoid()
+        return super().save(*args, **kwargs)
+
+    @staticmethod
+    def generate_vulcoid(timestamp=None):
+        if not timestamp:
+            timestamp = datetime.now()
+        timestamp = timestamp.strftime("%Y%m%d-%H%M-%S%f")
+        return f"VULCOID-{timestamp}"
 
     @property
     def vulnerable_to(self):
@@ -56,7 +87,7 @@ class Vulnerability(models.Model):
         )
 
     def __str__(self):
-        return self.cve_id or self.summary
+        return self.vulnerability_id or self.summary
 
     class Meta:
         verbose_name_plural = "Vulnerabilities"
@@ -74,6 +105,10 @@ class VulnerabilityReference(models.Model):
         max_length=50, help_text="Reference ID, eg:DSA-4465-1", blank=True
     )
     url = models.URLField(max_length=1024, help_text="URL of Vulnerability data", blank=True)
+
+    @property
+    def scores(self):
+        return VulnerabilitySeverity.objects.filter(reference=self.id)
 
     class Meta:
         unique_together = ("vulnerability", "source", "reference_id", "url")
@@ -145,7 +180,7 @@ class PackageRelatedVulnerability(models.Model):
     is_vulnerable = models.BooleanField()
 
     def __str__(self):
-        return f"{self.package.package_url} {self.vulnerability.cve_id}"
+        return f"{self.package.package_url} {self.vulnerability.vulnerability_id}"
 
     class Meta:
         unique_together = ("package", "vulnerability")
@@ -166,7 +201,9 @@ class Importer(models.Model):
     name = models.CharField(max_length=100, unique=True, help_text="Name of the importer")
 
     license = models.CharField(
-        max_length=100, blank=True, help_text="License of the vulnerability data",
+        max_length=100,
+        blank=True,
+        help_text="License of the vulnerability data",
     )
 
     last_run = models.DateTimeField(null=True, help_text="UTC Timestamp of the last run")
@@ -202,3 +239,28 @@ class Importer(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class VulnerabilitySeverity(models.Model):
+
+    scoring_system_choices = (
+        (system.identifier, system.name) for system in scoring_systems.values()
+    )  # nopep8
+    vulnerability = models.ForeignKey(Vulnerability, on_delete=models.CASCADE)
+    value = models.CharField(max_length=50, help_text="Example: 9.0, Important, High")
+    scoring_system = models.CharField(
+        max_length=50,
+        choices=scoring_system_choices,
+        help_text="identifier for the scoring system used. Available choices are: {} ".format(
+            ", ".join(
+                [
+                    f"{ss.identifier} is vulnerability_id for {ss.name} system"
+                    for ss in scoring_systems.values()
+                ]
+            )
+        ),
+    )
+    reference = models.ForeignKey(VulnerabilityReference, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ("vulnerability", "reference", "scoring_system")
